@@ -33,7 +33,9 @@
     return p.img ? '<img class="card-img" src="' + p.img + '" alt="' + p.name + '" loading="lazy">' : "";
   }
   function cardHTML(p) {
-    var cta = '<p class="go"><a class="arrow-link" href="enquiry.html?machine=' + encodeURIComponent(p.name) + '">Enquire <span class="arr">&rarr;</span></a></p>';
+    var m = encodeURIComponent(p.name);
+    var cta = '<p class="go"><a class="arrow-link" href="machine.html?m=' + m + '">View details <span class="arr">&rarr;</span></a></p>';
+    var pills = '<div class="card-pills"><span class="pill">' + (p.cat === "Consumables" ? "Original Stock" : "Industrial Grade") + '</span><span class="pill">Verified Specs</span></div>';
     if (p.flagship) {
       var specs = Object.keys(p.spec || {}).map(function (k) {
         return '<div><span>' + k + '</span>' + p.spec[k] + "</div>";
@@ -41,11 +43,11 @@
       return '<article class="card flagship"><div class="inner"><div>' +
         '<div class="rowline"><span class="cat">Flagship · ' + p.cat + '</span><span class="ref">' + refOf(p) + "</span></div>" +
         "<h3>" + p.name + "</h3><p>" + p.blurb +
-        '</p><p class="go"><a class="arrow-link" href="enquiry.html?machine=' + encodeURIComponent(p.name) + '">Request specs &amp; pricing <span class="arr">&rarr;</span></a></p>' +
+        '</p>' + pills + '<p class="go"><a class="arrow-link" href="machine.html?m=' + m + '">Full spec sheet &amp; enquire <span class="arr">&rarr;</span></a></p>' +
         "</div><div class='flag-right'>" + imgHTML(p) + '<div class="flag-specs">' + specs + "</div></div></div></article>";
     }
     return '<article class="card"><div class="rowline"><span class="ref">' + refOf(p) + '</span><span class="cat">' + p.cat + "</span></div>" + imgHTML(p) +
-      "<h3>" + p.name + "</h3><p>" + p.blurb + cta + "</article>";
+      "<h3>" + p.name + "</h3><p>" + p.blurb + pills + cta + "</article>";
   }
   function group(cat) {
     var items = P.filter(function (p) { return p.cat === cat; });
@@ -73,5 +75,40 @@
   if (location.hash && location.hash.length > 1) {
     var el = document.querySelector(location.hash) || document.querySelector("#cat-" + location.hash.slice(1));
     if (el) setTimeout(function () { el.scrollIntoView(); }, 60);
+  }
+
+  /* enquiry form: populate machine dropdown + preselect from ?machine= */
+  var form = document.getElementById("enquiry-form");
+  if (form && P) {
+    var sel = document.getElementById("machine");
+    if (sel) {
+      sel.innerHTML = '<option value="">No machine in mind — advise</option>' +
+        P.map(function (p) { return '<option>' + p.name + "</option>"; }).join("");
+      var m = new URLSearchParams(location.search).get("machine");
+      if (m && Array.from(sel.options).some(function (o) { return o.text === m; })) sel.value = m;
+    }
+
+    /* submit: Formspree endpoint when configured, else mailto. See FORM_ID below. */
+    var FORM_ID = "YOUR_FORMSPREE_ID"; /* paste the id from formspree.com/f/<id> */
+    form.addEventListener("submit", function (e) {
+      var status = document.getElementById("form-status");
+      if (FORM_ID === "YOUR_FORMSPREE_ID") {
+        e.preventDefault();
+        var d = new FormData(form);
+        var subject = "Enquiry — " + (d.get("machine") || "Vee Kay");
+        var body = "Name: " + (d.get("name") || "") + "\nCompany: " + (d.get("company") || "") +
+          "\nPhone: " + (d.get("phone") || "") + "\nEmail: " + (d.get("email") || "") +
+          "\nCity: " + (d.get("city") || "") + "\nMachine: " + (d.get("machine") || "") +
+          "\n\n" + (d.get("message") || "");
+        window.location.href = "mailto:sales@veekayent.com?subject=" +
+          encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        if (status) status.textContent = "Opening your email app to send this to sales@veekayent.com…";
+        return;
+      }
+      if (status) status.textContent = "Sending…";
+      fetch("https://formspree.io/f/" + FORM_ID, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+        .then(function (r) { if (status) status.textContent = r.ok ? "Enquiry sent — we'll reply within one working day." : "Send failed, try again or call 1800-2000-964."; })
+        .catch(function () { if (status) status.textContent = "Network error, call 1800-2000-964."; });
+    });
   }
 })();
