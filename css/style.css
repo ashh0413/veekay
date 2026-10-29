@@ -1230,3 +1230,7 @@ nav.main-nav .link:active { transform: scale(0.96); }
   color: #ffffff;
   text-decoration-color: #ffffff;
 }
+
+/* Motion engine — SplitText reveal + parallax */
+.sl-line { display: block; overflow: hidden; }
+.sl-char { display: inline-block; will-change: transform; }
