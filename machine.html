@@ -3,41 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Machine — Vee Kay Enterprises</title>
-<meta name="description" content="Vee Kay Enterprises machine detail — specifications and enquire.">
+<title>Machine Specification — Vee Kay Enterprises</title>
+<meta name="description" content="Technical specifications, configuration details, and quotation request.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Archivo:wght@300;400;500;600&family=Pitch:ital@0;1&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="assets/img/logo.png">
-<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=axis20261028">
 </head>
 <body>
 
-<div class="strip"><div class="wrap">
-  <span>Est. 1990 · Kirti Nagar, New Delhi</span>
-  <span>10+ cities across India</span>
-  <a href="tel:18002000964">24×7 · 1800-2000-964</a>
-</div></div>
-
 <header class="site-header">
   <div class="wrap">
-    <a class="logo" href="index.html"><img src="assets/img/logo.png" alt="Vee Kay Enterprises" height="44"><span>Est. 1990 · New Delhi</span></a>
-    <nav>
+    <a class="brand-title" href="index.html">
+      VEE KAY ENTERPRISES
+    </a>
+    <nav class="main-nav">
       <div class="links">
-        <a class="link" href="index.html">Home</a>
-        <a class="link" href="products.html">Products</a>
-        <a class="link" href="about.html">About</a>
+        <a class="link" href="index.html#capabilities">Capabilities</a>
+        <a class="link" href="products.html">Machinery</a>
+        <a class="link" href="about.html">Quality</a>
+        <a class="link" href="about.html">Company</a>
         <a class="link" href="contact.html">Contact</a>
       </div>
-      <a class="btn" href="enquiry.html">Request Quote</a>
-      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a class="btn-nav-cta" href="enquiry.html">Start a Project &rarr;</a>
+      <button class="burger" aria-label="Toggle Navigation"><span></span><span></span><span></span></button>
     </nav>
   </div>
 </header>
 
 <main>
 <section class="machine-detail section wrap" id="machine-detail">
-  <a class="back mono" href="products.html">&larr; All machines</a>
+  <a class="back" href="products.html">&larr; Back to All Machines</a>
   <div class="md-grid">
     <div class="md-copy">
       <div class="rowline"><span class="ref" id="md-ref"></span><span class="cat" id="md-cat"></span></div>
@@ -49,38 +45,45 @@
     <div class="md-visual" id="md-visual"></div>
   </div>
   <div class="md-cta">
-    <a class="btn" id="md-enquire" href="enquiry.html">Enquire about this machine &rarr;</a>
-    <a class="btn ghost" href="products.html">Back to range</a>
+    <a class="btn-primary" id="md-enquire" href="enquiry.html">Request Quotation for this Platform &rarr;</a>
+    <a class="btn ghost" href="products.html">Browse Other Systems</a>
   </div>
 </section>
 </main>
 
-<footer>
+<footer class="footer-pedestal-section">
   <div class="wrap">
-    <div class="top">
-      <a class="logo" href="index.html"><img src="assets/img/logo.png" alt="Vee Kay Enterprises" height="44"><span>Est. 1990 · New Delhi</span></a>
-      <div class="cols">
-        <div><h5>Site</h5><ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="enquiry.html">Enquiry</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul></div>
-        <div><h5>Contact</h5><ul>
-          <li><a href="tel:18002000964">1800-2000-964</a></li>
-          <li><a href="mailto:sales@veekayent.com">sales@veekayent.com</a></li>
+    <div class="pedestal-grid">
+      <div class="pedestal-block">
+        <div>
+          <h4>VEE KAY ENTERPRISES</h4>
+          <p>PRECISION MOVES INDUSTRY FORWARD</p>
+        </div>
+      </div>
+      <div class="pedestal-block">
+        <div class="pedestal-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Machinery</a>
+          <a href="about.html">Quality</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <p style="margin-top: 16px;">24/7 HELPLINE &middot; 1800-2000-964</p>
+      </div>
+      <div class="pedestal-block">
+        <div>
+          <h4>NEW DELHI / GLOBAL</h4>
+          <p>BUILT HERE FOR A BRIGHTER TOMORROW</p>
         </div>
       </div>
     </div>
-    <div class="bot">
-      <span>5/7, Kirti Nagar Industrial Area, New Delhi – 110015</span>
-      <span>© 2026 Vee Kay Enterprises</span>
+    <div class="footer-bottom">
+      <span>5/7, Kirti Nagar Industrial Area, New Delhi &ndash; 110015</span>
+      <span>&copy; 2026 Vee Kay Enterprises. All rights reserved.</span>
     </div>
   </div>
 </footer>
 
-<script src="js/data.js"></script>
+<script src="js/data.js?v=2"></script>
 <script>
 (function () {
   var P = typeof PRODUCTS !== "undefined" ? PRODUCTS : [];
@@ -89,10 +92,10 @@
   var p = P.filter(function (x) { return x.name === q; })[0]
        || P.filter(function (x) { return x.name.replace(/\s+/g, " ") === q; })[0];
   if (!p) {
-    box.innerHTML = '<p class="sub">Machine not found. <a href="products.html" class="go">&larr; Back to range</a></p>';
+    box.innerHTML = '<p class="sub">Platform not found. <a href="products.html" class="arrow-link">&larr; Return to catalog</a></p>';
     return;
   }
-  document.title = p.name + " — Vee Kay Enterprises";
+  document.title = p.name + " — Technical Specifications — Vee Kay Enterprises";
   document.getElementById("md-ref").textContent = "REF · VKE-" + String(P.indexOf(p) + 1).padStart(3, "0");
   document.getElementById("md-cat").textContent = p.cat;
   document.getElementById("md-name").textContent = p.name;
@@ -114,5 +117,6 @@
   document.getElementById("md-enquire").href = "enquiry.html?machine=" + encodeURIComponent(p.name);
 })();
 </script>
+<script src="js/app.js?v=2"></script>
 </body>
 </html>
