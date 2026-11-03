@@ -33,22 +33,23 @@
 
   function boot() {
     var gsap = window.gsap;
-    gsap.registerPlugin(window.ScrollTrigger, window.SplitText);
+    if (window.ScrollTrigger) gsap.registerPlugin(window.ScrollTrigger);
 
     /* Lenis inertia scroll */
     var lenis = new window.Lenis({ duration: 1.15, smoothWheel: true });
     gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
     lenis.on("scroll", function () { window.ScrollTrigger.update(); });
 
-    /* Hero headline character reveal */
-    var h1 = document.querySelector(".hero-axis h1");
-    if (h1 && window.SplitText) {
-      var st = new window.SplitText(h1, { type: "chars", lineClassName: "sl-line", charClassName: "sl-char" });
-      gsap.fromTo(st.chars, { yPercent: 115, opacity: 0 }, {
-        yPercent: 0, opacity: 1, duration: 0.85, ease: "power4.out", stagger: 0.028, delay: 0.12
+    /* Hero headline reveal — responsive, zero DOM-shredding */
+    var h1 = document.querySelector(".hero-axis h1") || document.querySelector("h1");
+    if (h1) {
+      gsap.from(h1, {
+        y: 32,
+        opacity: 0,
+        duration: 0.9,
+        ease: "power3.out",
+        clearProps: "all"
       });
-      /* Safety net: guarantee the headline is visible even if rAF is throttled (backgrounded tab). */
-      setTimeout(function () { gsap.set(st.chars, { opacity: 1, yPercent: 0, clearProps: "all" }); }, 2200);
     }
 
     /* Section reveals */
