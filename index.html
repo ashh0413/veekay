@@ -3,299 +3,575 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vee Kay Enterprises — Precision Industrial Printing Systems</title>
-<meta name="description" content="Precision built for what comes next. Manufacturer and importer of wide-format digital printing platforms: solvent, textile, UV, sublimation, CNC, and laser systems since 1990.">
+<title>Vee Kay Enterprises — Industrial Printing Systems | Since 1990</title>
+<meta name="description" content="Manufacturer and importer of wide-format digital printing platforms: solvent, textile, UV flatbed, sublimation, and CNC systems since 1990. New Delhi, India.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=fable5v1">
+<link rel="stylesheet" href="css/style.css?v=apple1">
+<link rel="stylesheet" href="css/apple-design-system.css?v=apple1">
 </head>
-<body>
+<body class="apple-theme">
 
-<!-- Header (Axis Works Minimalist Precision) -->
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand-title" href="index.html">
-      <span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
-      <span>VEE KAY ENTERPRISES</span>
+<!-- 1. Apple Global Frosted Navigation Bar (44px) -->
+<header class="apple-global-nav">
+  <div class="apple-nav-inner">
+    <!-- Brand Mark (Ref: 18.webp) -->
+    <a class="apple-logo-link" href="index.html" aria-label="Vee Kay Enterprises Home">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      <span>VEE KAY</span>
     </a>
-    <nav class="main-nav">
-      <div class="links">
-        <a class="link" href="#capabilities">Capabilities</a>
-        <a class="link" href="products.html">Machinery &amp; 3D</a>
-        <a class="link" href="about.html">Quality &amp; Facility</a>
-        <a class="link" href="contact.html">Contact</a>
-      </div>
-      <a class="btn-nav-cta" href="enquiry.html">Start a Project &rarr;</a>
-      <button class="burger" aria-label="Toggle Navigation"><span></span><span></span><span></span></button>
-    </nav>
+
+    <!-- Primary Nav Items with Mega-Menu Flyout Hooks -->
+    <ul class="apple-nav-links" role="menubar">
+      <li class="apple-nav-item" data-flyout="flyout-solvent" role="none">
+        <a class="apple-nav-link" href="products.html#solvent" role="menuitem">Roll-to-Roll</a>
+      </li>
+      <li class="apple-nav-item" data-flyout="flyout-uv" role="none">
+        <a class="apple-nav-link" href="products.html#uv" role="menuitem">Flatbed UV</a>
+      </li>
+      <li class="apple-nav-item" data-flyout="flyout-textile" role="none">
+        <a class="apple-nav-link" href="products.html#textile" role="menuitem">Digital Textile</a>
+      </li>
+      <li class="apple-nav-item" data-flyout="flyout-cnc" role="none">
+        <a class="apple-nav-link" href="products.html#cnc" role="menuitem">CNC &amp; Laser</a>
+      </li>
+      <li class="apple-nav-item" data-flyout="flyout-tech" role="none">
+        <a class="apple-nav-link" href="about.html" role="menuitem">Technology &amp; SLA</a>
+      </li>
+      <li class="apple-nav-item" role="none">
+        <a class="apple-nav-link" href="products.html#showroom-3d-stage" role="menuitem">3D Showroom</a>
+      </li>
+    </ul>
+
+    <!-- Quick Action Icons (Search, Shortlist Bag, Mobile Toggle) -->
+    <div class="apple-nav-actions">
+      <a href="products.html" class="apple-icon-btn" aria-label="Search catalog">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </a>
+      <a href="enquiry.html" class="apple-icon-btn apple-quote-badge" aria-label="Quote Shortlist">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span class="apple-badge-count">3</span>
+      </a>
+      <button class="apple-mobile-burger" id="apple-mobile-burger" aria-label="Open mobile menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg>
+      </button>
+    </div>
   </div>
 </header>
 
+<!-- Dimmer for Mega-Menu Flyouts -->
+<div class="apple-nav-dimmer" id="apple-nav-dimmer"></div>
+
+<!-- Flyout 1: Roll-to-Roll (Ref: 26.webp, 27.webp) -->
+<div class="apple-flyout-overlay" id="flyout-solvent" role="region" aria-label="Roll to Roll Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Explore Lineup</h3>
+      <div class="flyout-giant-title">Roll-to-Roll Systems</div>
+      <a href="products.html#solvent" class="flyout-explore-all">Explore all roll printers &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="machine.html?m=Colorjet%20Irisjet%203200" class="flyout-model-card">
+        <img src="assets/img/curated/colorjet_irisjet_roll.jpg" alt="Colorjet Irisjet" class="flyout-model-thumb">
+        <span class="flyout-model-name">Irisjet Pro 3200</span>
+        <span class="flyout-model-spec">16 Kyocera Heads · 360 m²/hr</span>
+      </a>
+      <a href="machine.html?m=VK%20JET%203500" class="flyout-model-card">
+        <img src="assets/img/products-items/VK-JET-3500.png" alt="VK-JET 3500" class="flyout-model-thumb">
+        <span class="flyout-model-name">VK-JET 3500</span>
+        <span class="flyout-model-spec">Konica 1024i · High-Speed Flex</span>
+      </a>
+      <a href="machine.html?m=Q-Jet%20Plus%201024" class="flyout-model-card">
+        <img src="assets/img/products-items/Q-Jet-Plus-1024.png" alt="Q-Jet Plus" class="flyout-model-thumb">
+        <span class="flyout-model-name">Q-Jet Plus 1024</span>
+        <span class="flyout-model-spec">Eco-Solvent · Heavy Steel Bed</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Quick Links</h4>
+      <ul class="flyout-link-list">
+        <li><a href="products.html#solvent">Compare Roll Specifications</a></li>
+        <li><a href="about.html">Konica Minolta &amp; Kyocera SLA</a></li>
+        <li><a href="enquiry.html">Request Factory Pricing</a></li>
+        <li><a href="contact.html">Order Sample Media Rolls</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Flyout 2: Flatbed UV -->
+<div class="apple-flyout-overlay" id="flyout-uv" role="region" aria-label="Flatbed UV Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Explore Lineup</h3>
+      <div class="flyout-giant-title">UV Flatbed &amp; Hybrid</div>
+      <a href="products.html#uv" class="flyout-explore-all">Explore all UV platforms &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="machine.html?m=DOCAN%20H1600M" class="flyout-model-card">
+        <img src="assets/img/curated/uv_flatbed.jpg" alt="DOCAN H1600M" class="flyout-model-thumb">
+        <span class="flyout-model-name">DOCAN H1600M</span>
+        <span class="flyout-model-spec">Ricoh Gen6 · White + Varnish</span>
+      </a>
+      <a href="machine.html?m=DOCAN%20UV%20Flatbed%202513" class="flyout-model-card">
+        <img src="assets/img/curated/uv_acrylic.jpg" alt="DOCAN 2513" class="flyout-model-thumb">
+        <span class="flyout-model-name">DOCAN 2513 Ultra</span>
+        <span class="flyout-model-spec">2.5m &times; 1.3m Rigid Glass Bed</span>
+      </a>
+      <a href="products.html#uv" class="flyout-model-card">
+        <img src="assets/img/curated/uv_signage.jpg" alt="UV Hybrid Roll" class="flyout-model-thumb">
+        <span class="flyout-model-name">H3000 Heavy Hybrid</span>
+        <span class="flyout-model-spec">Dual Roll + Flatbed Substrates</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Substrate Testing</h4>
+      <ul class="flyout-link-list">
+        <li><a href="products.html#uv">Rigid Acrylic &amp; Architectural Glass</a></li>
+        <li><a href="products.html#uv">Aluminum Composite &amp; Ceramic</a></li>
+        <li><a href="enquiry.html">Schedule UV Adhesion Test</a></li>
+        <li><a href="contact.html">LED Curing Lamp Specifications</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Flyout 3: Digital Textile -->
+<div class="apple-flyout-overlay" id="flyout-textile" role="region" aria-label="Digital Textile Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Explore Lineup</h3>
+      <div class="flyout-giant-title">Digital Textile</div>
+      <a href="products.html#textile" class="flyout-explore-all">Explore all textile platforms &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="machine.html?m=Vega%203180S" class="flyout-model-card">
+        <img src="assets/img/curated/textile_fashion.jpg" alt="Vega 3180S" class="flyout-model-thumb">
+        <span class="flyout-model-name">Vega 3180S Direct</span>
+        <span class="flyout-model-spec">16 Heads · Continuous Belt Feed</span>
+      </a>
+      <a href="products.html#textile" class="flyout-model-card">
+        <img src="assets/img/curated/textile_roll.jpg" alt="Textile Roll" class="flyout-model-thumb">
+        <span class="flyout-model-name">Subli-Pro 1900</span>
+        <span class="flyout-model-spec">High-Speed Industrial Transfer</span>
+      </a>
+      <a href="products.html#textile" class="flyout-model-card">
+        <img src="assets/img/curated/sublimation_main.jpg" alt="Direct Garment" class="flyout-model-thumb">
+        <span class="flyout-model-name">TexJet Master</span>
+        <span class="flyout-model-spec">Direct-to-Film &amp; Garment Roll</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Fabric Applications</h4>
+      <ul class="flyout-link-list">
+        <li><a href="products.html#textile">Reactive &amp; Disperse Inks</a></li>
+        <li><a href="products.html#textile">Pure Silk, Chiffon &amp; Cotton</a></li>
+        <li><a href="about.html">Steam &amp; Wash Calibration</a></li>
+        <li><a href="enquiry.html">Request Color Swatch Book</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Flyout 4: CNC & Finishing -->
+<div class="apple-flyout-overlay" id="flyout-cnc" role="region" aria-label="CNC and Laser Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Explore Lineup</h3>
+      <div class="flyout-giant-title">CNC &amp; Finishing</div>
+      <a href="products.html#cnc" class="flyout-explore-all">Explore cutting platforms &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="products.html#cnc" class="flyout-model-card">
+        <img src="assets/img/curated/cnc_router.jpg" alt="CNC Router" class="flyout-model-thumb">
+        <span class="flyout-model-name">FC-1325 Heavy Duty</span>
+        <span class="flyout-model-spec">9kW Air Spindle · Vacuum Bed</span>
+      </a>
+      <a href="products.html#cnc" class="flyout-model-card">
+        <img src="assets/img/curated/laser_metal.jpg" alt="Fiber Laser" class="flyout-model-thumb">
+        <span class="flyout-model-name">Fiber Laser 3015</span>
+        <span class="flyout-model-spec">Raycus 3kW · Sheet Metal Cut</span>
+      </a>
+      <a href="products.html#cnc" class="flyout-model-card">
+        <img src="assets/img/curated/laser_cutting.jpg" alt="CO2 Laser" class="flyout-model-thumb">
+        <span class="flyout-model-name">CO2 Laser 1390</span>
+        <span class="flyout-model-spec">Precision Acrylic &amp; Wood Cut</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Tooling &amp; Cut</h4>
+      <ul class="flyout-link-list">
+        <li><a href="products.html#cnc">Heavy Steel Fabrication Gantries</a></li>
+        <li><a href="products.html#cnc">Channel Letter Bending Machines</a></li>
+        <li><a href="enquiry.html">Request Tooling Demonstration</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Flyout 5: Technology & SLA -->
+<div class="apple-flyout-overlay" id="flyout-tech" role="region" aria-label="Technology and SLA Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Industrial Heritage</h3>
+      <div class="flyout-giant-title">Technology &amp; SLA</div>
+      <a href="about.html" class="flyout-explore-all">Read our engineering history &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="about.html" class="flyout-model-card">
+        <img src="assets/img/curated/print_head.jpg" alt="Print Heads" class="flyout-model-thumb">
+        <span class="flyout-model-name">Certified Print Heads</span>
+        <span class="flyout-model-spec">Kyocera, Ricoh &amp; Konica Minolta</span>
+      </a>
+      <a href="about.html" class="flyout-model-card">
+        <img src="assets/img/curated/facility_hall.jpg" alt="Facility Hall" class="flyout-model-thumb">
+        <span class="flyout-model-name">New Delhi Factory Lab</span>
+        <span class="flyout-model-spec">Kirti Nagar Industrial Area</span>
+      </a>
+      <a href="about.html" class="flyout-model-card">
+        <img src="assets/img/curated/inks_cmyk.jpg" alt="Genuine Inks" class="flyout-model-thumb">
+        <span class="flyout-model-name">Genuine OEM Inks</span>
+        <span class="flyout-model-spec">High-density pigment dispersion</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Support &amp; Guarantee</h4>
+      <ul class="flyout-link-list">
+        <li><a href="contact.html">24/7 Hotline SLA Guarantee</a></li>
+        <li><a href="about.html">ISO 9001 Certified Factory</a></li>
+        <li><a href="enquiry.html">Book On-Site Operator Training</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Apple Product Family Sub-Nav Ribbon (Ref: 18.webp) -->
+<nav class="apple-ribbon-bar" aria-label="Machinery Categories">
+  <div class="apple-ribbon-scroll">
+    <a href="products.html#solvent" class="apple-ribbon-item">
+      <div class="apple-ribbon-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"></rect><circle cx="8" cy="12" r="2"></circle><path d="M12 12h6"></path></svg>
+      </div>
+      <span class="apple-ribbon-label">Roll-to-Roll</span>
+      <span class="apple-ribbon-badge">Up to 3.2m</span>
+    </a>
+    <a href="products.html#uv" class="apple-ribbon-item">
+      <div class="apple-ribbon-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"></path><path d="M4 14h16"></path><path d="M8 6v12"></path></svg>
+      </div>
+      <span class="apple-ribbon-label">Flatbed UV</span>
+      <span class="apple-ribbon-badge">Rigid Substrates</span>
+    </a>
+    <a href="products.html#textile" class="apple-ribbon-item active">
+      <div class="apple-ribbon-icon">
+        <svg viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"></path></svg>
+      </div>
+      <span class="apple-ribbon-label">Digital Textile</span>
+      <span class="apple-ribbon-badge">16 Kyocera</span>
+    </a>
+    <a href="products.html#cnc" class="apple-ribbon-item">
+      <div class="apple-ribbon-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 3v6M12 15v6M3 12h6M15 12h6"></path></svg>
+      </div>
+      <span class="apple-ribbon-label">CNC &amp; Laser</span>
+      <span class="apple-ribbon-badge">Heavy Bed</span>
+    </a>
+    <a href="about.html" class="apple-ribbon-item">
+      <div class="apple-ribbon-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+      </div>
+      <span class="apple-ribbon-label">Inks &amp; Heads</span>
+      <span class="apple-ribbon-badge">OEM Certified</span>
+    </a>
+    <a href="products.html#showroom-3d-stage" class="apple-ribbon-item">
+      <div class="apple-ribbon-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      </div>
+      <span class="apple-ribbon-label">3D Showroom</span>
+      <span class="apple-ribbon-badge" style="color:var(--apple-blue);">Interactive</span>
+    </a>
+  </div>
+</nav>
+
 <main>
-<!-- Hero Section (Axis Works Split Architecture) -->
-<section class="hero-axis">
-  <div class="wrap hero-axis-grid">
-    <div class="hero-axis-content">
-      <p class="kicker">ADVANCED MANUFACTURING / EST. 1990</p>
-      <h1>Precision built<br>for what comes next.</h1>
-      <p class="hero-axis-sub">We engineer, supply, and support wide-format industrial printing platforms with uncompromising accuracy and 24/7 production reliability.</p>
+<!-- 3. Primary Flagship Hardware Hero (Ref: 18.webp) -->
+<section class="apple-hero-flagship">
+  <div class="apple-wrap">
+    <p class="apple-eyebrow">NEW &middot; FLAGSHIP TEXTILE PRODUCTION</p>
+    <h1 class="apple-hero-title">Colorjet Irisjet Pro</h1>
+    <p class="apple-hero-subhead">Textile production now with 16 Kyocera heads. 360 m²/hr continuous output across fashion silks and home rolls.</p>
+    <p class="apple-hero-price">From <strong>&#8377; 24,50,000</strong> &middot; Available for live factory demonstration in New Delhi<sup>1</sup></p>
 
-      <div class="hero-axis-actions">
-        <a class="btn-primary" href="products.html#showroom-3d-stage">Explore 3D Showroom &rarr;</a>
-        <span class="hero-action-divider"></span>
-        <a class="btn-secondary-link" href="about.html">View the Showroom <span class="arr">&rarr;</span></a>
-      </div>
-
-      <!-- 3 Metrics Bar with vertical dividers -->
-      <div class="hero-metrics">
-        <div class="metric-block">
-          <span class="metric-val">&plusmn;0.005 mm</span>
-          <span class="metric-lbl">Typical Tolerance</span>
-        </div>
-        <div class="metric-block">
-          <span class="metric-val">24/7 Production</span>
-          <span class="metric-lbl">Always On Support</span>
-        </div>
-        <div class="metric-block">
-          <span class="metric-val">ISO 9001</span>
-          <span class="metric-lbl">Certified Quality</span>
-        </div>
-      </div>
+    <!-- Apple Dual Pill CTAs -->
+    <div class="apple-cta-cluster">
+      <a href="machine.html?m=Colorjet%20Irisjet%203200" class="apple-btn-pill-primary">Explore Irisjet</a>
+      <a href="enquiry.html" class="apple-btn-pill-secondary">Get factory quote <span class="chev">&rsaquo;</span></a>
     </div>
 
-    <!-- 3D Metallic Hero Visual -->
-    <div class="hero-axis-visual">
-      <img src="assets/img/hero_gear_full.png" alt="Precision engineered mechanical gear and printing mechanism" width="480" height="480" fetchpriority="high">
+    <!-- Center Grounded Machinery Visual with Studio Light (Ref: 18.webp) -->
+    <div class="apple-hero-stage">
+      <img src="assets/img/curated/colorjet_irisjet_roll.jpg" alt="Colorjet Irisjet Industrial Roll to Roll Printer with vibrant rainbow fabric roll" class="apple-hero-machine-img" fetchpriority="high">
+      <div class="apple-stage-glow"></div>
     </div>
   </div>
 </section>
 
-<!-- Section 2: Our Capabilities ("One factory. Complete control.") -->
-<section class="section section-capabilities" id="capabilities">
-  <div class="wrap">
-    <div class="cap-header" data-reveal>
-      <div class="cap-header-left">
-        <p class="kicker">OUR CAPABILITIES</p>
-        <h2>One factory. Complete control.</h2>
-        <p>From initial calibration to full-scale continuous production, every printing technology stays under one roof.</p>
-      </div>
-      <div class="cap-header-right">
-        INTEGRATED PROCESSES<br>SUPERIOR OUTCOMES
+<!-- 4. Secondary Hardware Deep-Dive Stage (Ref: 19.webp, 20.webp) -->
+<section class="apple-deepdive-section">
+  <div class="apple-wrap">
+    <div class="apple-deepdive-header">
+      <p class="apple-eyebrow" style="color:var(--apple-blue);">HIGH-SPEED SOLVENT &middot; 3.2M</p>
+      <h2 class="apple-deepdive-title">Engineered to dominate volume production.</h2>
+      <p class="apple-deepdive-sub">VK-JET 3500 High-Speed Solvent. Industrial monolithic steel gantry, magnetic linear drive, and unwavering drop registration.</p>
+
+      <div class="apple-cta-cluster">
+        <a href="machine.html?m=VK%20JET%203500" class="apple-btn-pill-primary">Learn more</a>
+        <a href="products.html#solvent" class="apple-link-chevron">Compare all roll printers <span class="chev">&rsaquo;</span></a>
       </div>
     </div>
 
-    <!-- 3-Column Capability Grid with step dots -->
-    <div class="cap-grid">
-      <!-- Card 1 -->
-      <article class="cap-card">
-        <div class="cap-card-header">
-          <span class="cap-dot orange"></span>
-          <span>01</span>
+    <!-- Isolated Machine Centerpiece -->
+    <div style="max-width:820px;margin:0 auto;">
+      <img src="assets/img/products-items/VK-JET-3500.png" alt="VK-JET 3500 Industrial Wide Format Printer" style="width:100%;height:auto;filter:drop-shadow(0 24px 60px rgba(0,0,0,0.92));">
+    </div>
+
+    <!-- Apple 3-Pillar Technical Spec Strip -->
+    <div class="apple-specs-strip">
+      <div class="apple-spec-pill">
+        <span class="apple-spec-metric">3.2m</span>
+        <span class="apple-spec-unit">Seamless Print Width</span>
+        <span class="apple-spec-desc">Accommodates full 126-inch rolls for high-output billboard flex and banners.</span>
+      </div>
+      <div class="apple-spec-pill">
+        <span class="apple-spec-metric">Up to 8</span>
+        <span class="apple-spec-unit">Konica 1024i Heads</span>
+        <span class="apple-spec-desc">True 30 pl drop size with 45 kHz firing frequency for razor-sharp edge definition.</span>
+      </div>
+      <div class="apple-spec-pill">
+        <span class="apple-spec-metric">&plusmn;0.005mm</span>
+        <span class="apple-spec-unit">Linear Rail Precision</span>
+        <span class="apple-spec-desc">Japanese THK precision guide rails guarantee zero carriage wobble at 1,300 sq ft/hr.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 2-Up Split Bento Hardware Grid (Ref: 21.webp) -->
+<section class="apple-bento-section">
+  <div class="apple-wrap">
+    <div class="apple-bento-grid">
+      <!-- Left Card: Pure Studio Light Mode (#f5f5f7) -->
+      <article class="apple-bento-card card-studio-light">
+        <span class="apple-card-eyebrow">UV FLATBED &amp; HYBRID</span>
+        <h3 class="apple-card-title">DOCAN H1600M</h3>
+        <p class="apple-card-sub">Direct printing on rigid acrylic, architectural glass, wood slabs, and metal sheets with white and spot varnish.</p>
+        <div class="apple-card-ctas">
+          <a href="machine.html?m=DOCAN%20H1600M" class="apple-btn-pill-primary">Explore DOCAN</a>
+          <a href="products.html#uv" class="apple-link-chevron" style="color:var(--apple-blue);">View substrates <span class="chev">&rsaquo;</span></a>
         </div>
-        <div class="cap-card-img">
-          <img src="assets/img/cap_machining.png" alt="Precision solvent print head and mechanism" loading="lazy">
-        </div>
-        <div class="cap-card-body">
-          <div>
-            <h3>Precision Machining</h3>
-            <p>Complex wide-format geometries. Tighter print tolerances. Consistent high-speed outdoor flex results.</p>
-          </div>
-          <a class="cap-tag-btn" href="products.html#solvent">
-            <span>SOLVENT / 3.2M</span>
-            <span class="arr">&rarr;</span>
-          </a>
+        <div class="apple-card-bottom-visual">
+          <img src="assets/img/curated/uv_flatbed.jpg" alt="DOCAN H1600M UV Flatbed Printer" style="border-radius:12px;filter:drop-shadow(0 14px 30px rgba(0,0,0,0.18));">
         </div>
       </article>
 
-      <!-- Card 2 -->
-      <article class="cap-card">
-        <div class="cap-card-header">
-          <span class="cap-dot white"></span>
-          <span>02</span>
+      <!-- Right Card: Pure Obsidian Dark Mode (#161617) -->
+      <article class="apple-bento-card card-obsidian-dark">
+        <span class="apple-card-eyebrow">DIGITAL TEXTILE &amp; APPAREL</span>
+        <h3 class="apple-card-title">Vega 3180S Direct</h3>
+        <p class="apple-card-sub">Industrial continuous belt fabric platform. High-density reactive, acid, and disperse ink dispersion on natural silks.</p>
+        <div class="apple-card-ctas">
+          <a href="machine.html?m=Vega%203180S" class="apple-btn-pill-primary">Explore Vega</a>
+          <a href="enquiry.html" class="apple-link-chevron">Order fabric swatches <span class="chev">&rsaquo;</span></a>
         </div>
-        <div class="cap-card-img">
-          <img src="assets/img/cap_assembly.png" alt="Automated textile and fabric printing assembly" loading="lazy">
-        </div>
-        <div class="cap-card-body">
-          <div>
-            <h3>Automated Assembly</h3>
-            <p>Scalable, repeatable digital fabric output with zero compromise across fashion and continuous home textile.</p>
-          </div>
-          <a class="cap-tag-btn" href="products.html#textile">
-            <span>HIGH-SPEED TEXTILE</span>
-            <span class="arr">&rarr;</span>
-          </a>
-        </div>
-      </article>
-
-      <!-- Card 3 -->
-      <article class="cap-card">
-        <div class="cap-card-header">
-          <span class="cap-dot green"></span>
-          <span>03</span>
-        </div>
-        <div class="cap-card-img">
-          <img src="assets/img/cap_quality.png" alt="Quality control and rigid UV flatbed testing" loading="lazy">
-        </div>
-        <div class="cap-card-body">
-          <div>
-            <h3>Quality Control</h3>
-            <p>Every printer verified. UV curing on rigid acrylic, glass, and wood tested to international standard.</p>
-          </div>
-          <a class="cap-tag-btn" href="products.html#uv">
-            <span>RIGID UV / CNC</span>
-            <span class="arr">&rarr;</span>
-          </a>
+        <div class="apple-card-bottom-visual">
+          <img src="assets/img/curated/textile_fashion.jpg" alt="Vega 3180S Textile Printer Output" style="border-radius:12px;filter:drop-shadow(0 14px 30px rgba(0,0,0,0.85));">
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- Section 3: Flagship Machinery Highlights -->
-<section class="section section-machines">
-  <div class="wrap">
-    <div class="cap-header" data-reveal>
-      <div class="cap-header-left">
-        <p class="kicker">FEATURED PLATFORMS</p>
-        <h2>Engineered for volume. Built to endure.</h2>
+<!-- 6. "Endless Production" Application Showcase (Ref: 22.webp, 23.webp) -->
+<section class="apple-gallery-section">
+  <div class="apple-wrap">
+    <div class="apple-section-headline-group">
+      <div>
+        <p class="apple-eyebrow">APPLICATIONS &middot; MEDIA TESTING</p>
+        <h2>Endless Production. Unrivaled Fidelity.</h2>
+        <p>Every industrial platform is calibrated to master specific substrates under 24/7 demanding factory conditions.</p>
       </div>
-      <div class="cap-header-right">
-        35 INDUSTRIAL PLATFORMS<br>NATIONWIDE INSTALLATION
-      </div>
+      <a href="products.html" class="apple-btn-pill-secondary">Browse all 35 machines <span class="chev">&rsaquo;</span></a>
     </div>
 
-    <div class="grid">
-      <!-- Highlight 1: Solvent -->
-      <article class="card">
-        <div class="rowline">
-          <span class="ref">REF · VKE-001</span>
-          <span class="cat">SOLVENT / 3.2M</span>
+    <!-- 4 Stage Application Cards -->
+    <div class="apple-app-cards-grid">
+      <!-- App 1: Haute Couture -->
+      <a href="products.html#textile" class="apple-app-stage-card">
+        <img src="assets/img/curated/textile_roll.jpg" alt="Haute couture printed silk rolls" class="stage-bg" loading="lazy">
+        <div class="apple-app-scrim"></div>
+        <div class="apple-app-content">
+          <span class="apple-app-category">TEXTILE &middot; FASHION</span>
+          <h3 class="apple-app-title">Haute Couture &amp; Silk Sarees</h3>
+          <span class="apple-floating-pill-badge">Inspect weave resolution &rsaquo;</span>
         </div>
-        <img class="card-img" src="assets/img/curated/colorjet_irisjet_roll.jpg" alt="Colorjet Irisjet 3200 Industrial Roll-to-Roll Printer" loading="lazy">
-        <h3>Colorjet Irisjet 3200</h3>
-        <p>Workhorse wide-format solvent line. Pushes solvent CMYK across 3.2 m of banner and mesh at up to 1,300 sq ft/hr.</p>
-        <div class="card-pills">
-          <span class="pill">KONICA 512I HEADS</span>
-          <span class="pill">3.2M WIDTH</span>
-          <span class="pill">HEAVY BED</span>
-        </div>
-        <div class="go">
-          <a class="arrow-link" href="machine.html?m=VK%20JET%203500">View Specifications <span class="arr">&rarr;</span></a>
-        </div>
-      </article>
+      </a>
 
-      <!-- Highlight 2: Textile -->
-      <article class="card">
-        <div class="rowline">
-          <span class="ref">REF · VKE-006</span>
-          <span class="cat">DIGITAL TEXTILE</span>
+      <!-- App 2: Architectural Glass -->
+      <a href="products.html#uv" class="apple-app-stage-card">
+        <img src="assets/img/curated/uv_acrylic.jpg" alt="UV direct printing on architectural glass" class="stage-bg" loading="lazy">
+        <div class="apple-app-scrim"></div>
+        <div class="apple-app-content">
+          <span class="apple-app-category">UV FLATBED &middot; GLASS</span>
+          <h3 class="apple-app-title">Architectural Glass &amp; Facades</h3>
+          <span class="apple-floating-pill-badge">Cross-hatch adhesion SLA &rsaquo;</span>
         </div>
-        <img class="card-img" src="assets/img/curated/textile_fashion.jpg" alt="Vega 3180S High Speed Textile Printer" loading="lazy">
-        <h3>Vega 3180S</h3>
-        <p>Industrial roll-to-roll fabric platform for high-throughput fashion, apparel, and continuous home-furnishing rolls.</p>
-        <div class="card-pills">
-          <span class="pill">ROLL MEDIA</span>
-          <span class="pill">DIRECT FABRIC</span>
-          <span class="pill">FASHION GRADE</span>
-        </div>
-        <div class="go">
-          <a class="arrow-link" href="machine.html?m=Vega%203180S">View Specifications <span class="arr">&rarr;</span></a>
-        </div>
-      </article>
+      </a>
 
-      <!-- Highlight 3: UV Flatbed -->
-      <article class="card">
-        <div class="rowline">
-          <span class="ref">REF · VKE-017</span>
-          <span class="cat">UV FLATBED</span>
+      <!-- App 3: Heavy Duty Flex -->
+      <a href="products.html#solvent" class="apple-app-stage-card">
+        <img src="assets/img/curated/solvent_machine_roll.jpg" alt="Solvent billboard flex printing" class="stage-bg" loading="lazy">
+        <div class="apple-app-scrim"></div>
+        <div class="apple-app-content">
+          <span class="apple-app-category">OUTDOOR &middot; BILLBOARDS</span>
+          <h3 class="apple-app-title">High-Speed Frontlit Flex</h3>
+          <span class="apple-floating-pill-badge">3-year outdoor UV rating &rsaquo;</span>
         </div>
-        <img class="card-img" src="assets/img/curated/uv_flatbed.jpg" alt="DOCAN H1600M High Speed UV Flatbed" loading="lazy">
-        <h3>DOCAN H1600M</h3>
-        <p>High-speed direct UV printing on rigid substrates — glass, acrylic, ceramic tile, and aluminum composite panels.</p>
-        <div class="card-pills">
-          <span class="pill">RICOH GEN5/GEN6</span>
-          <span class="pill">RIGID MEDIA</span>
-          <span class="pill">WHITE + VARNISH</span>
-        </div>
-        <div class="go">
-          <a class="arrow-link" href="machine.html?m=DOCAN%20H1600M">View Specifications <span class="arr">&rarr;</span></a>
-        </div>
-      </article>
-    </div>
+      </a>
 
-    <div style="text-align: center; margin-top: 48px;">
-      <a class="btn-primary" href="products.html">Browse All 35 Machines &rarr;</a>
+      <!-- App 4: Precision Acrylic & CNC -->
+      <a href="products.html#cnc" class="apple-app-stage-card">
+        <img src="assets/img/curated/cnc_router.jpg" alt="CNC router cutting acrylic and metal" class="stage-bg" loading="lazy">
+        <div class="apple-app-scrim"></div>
+        <div class="apple-app-content">
+          <span class="apple-app-category">CNC &middot; FINISHING</span>
+          <h3 class="apple-app-title">Cut, Route &amp; Channel Bend</h3>
+          <span class="apple-floating-pill-badge">Heavy gantry tolerance &rsaquo;</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- Client Trust Marquee -->
-<section class="section" style="padding: 40px 0 60px;">
-  <div class="wrap" style="margin-bottom: 24px;">
-    <p class="kicker" style="margin-bottom: 0;">TRUSTED BY INDUSTRY LEADERS NATIONWIDE</p>
+<!-- 7. Interactive 3D Machinery Lab Promo -->
+<section class="apple-lab-promo-section">
+  <div class="apple-wrap">
+    <div class="apple-lab-card">
+      <div class="apple-lab-copy">
+        <p class="apple-eyebrow" style="color:var(--apple-link);">INTERACTIVE WEBGL</p>
+        <h2>Step inside the 3D Machinery Showroom.</h2>
+        <p>Inspect multi-head carriages, orbit around 3.2m steel beds, and verify print head configurations in real-time 3D before delivery.</p>
+        <div class="apple-cta-cluster" style="justify-content:flex-start;margin-bottom:0;">
+          <a href="products.html#showroom-3d-stage" class="apple-btn-pill-primary">Launch 3D Explorer &rarr;</a>
+          <a href="about.html" class="apple-btn-pill-secondary">Factory Tour &rsaquo;</a>
+        </div>
+      </div>
+      <div class="apple-lab-visual">
+        <img src="assets/img/hero_gear_full.png" alt="3D Machinery Mechanism rendering" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Client Trust Strip -->
+<section style="background:#000000;padding:24px 0 54px;border-top:1px solid rgba(255,255,255,0.08);">
+  <div class="apple-wrap" style="text-align:center;margin-bottom:20px;">
+    <p style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1a6;margin:0;">TRUSTED BY PRODUCTION HOUSES NATIONWIDE SINCE 1990</p>
   </div>
   <div class="clients" id="clients"></div>
 </section>
-
-<!-- Section 4: Bold Orange CTA ("Build the part others cannot.") -->
-<section class="section-orange-cta">
-  <div class="wrap orange-cta-grid">
-    <div>
-      <p class="orange-kicker">LET'S BUILD TOGETHER</p>
-      <h2>Build the part others cannot.</h2>
-      <p class="orange-cta-sub">Bring us the drawing, the tolerance, or the technical printing requirement. We will engineer the exact path to production.</p>
-      <div class="orange-actions">
-        <a class="btn-dark-cta" href="enquiry.html">Discuss Your Project &rarr;</a>
-        <span class="orange-badge">Response within one business day</span>
-      </div>
-    </div>
-    <div class="orange-visual">
-      <img src="assets/img/cta_star.png" alt="Precision engineered 3D geometric symbol" width="340" height="260" loading="lazy">
-    </div>
-  </div>
-</section>
 </main>
 
-<!-- Section 5: Dark Metallic Pedestal Footer with Orange Underglow -->
-<footer class="footer-pedestal-section">
-  <div class="wrap">
-    <div class="pedestal-grid">
-      <!-- Pedestal 1 -->
-      <div class="pedestal-block">
-        <div>
-          <h4>VEE KAY ENTERPRISES</h4>
-          <p>PRECISION MOVES INDUSTRY FORWARD</p>
-        </div>
+<!-- 8. Technical Footnotes & 5-Column Directory Footer (Ref: 24.webp, 25.webp) -->
+<footer class="apple-footer-global">
+  <div class="apple-wrap">
+    <!-- Numbered Technical Footnotes -->
+    <div class="apple-footnotes-block">
+      <ol>
+        <li>Speed specifications of 360 m²/hr for Colorjet Irisjet Pro are measured in 2-pass production draft mode utilizing genuine reactive ink sets under controlled temperature (22&deg;C–28&deg;C) and relative humidity (50%–70%). Actual factory output may vary depending on rip settings, fabric tensioning, and pass counts.</li>
+        <li>Print head warranties for Kyocera KJ4A, Ricoh Gen5/Gen6, and Konica Minolta 512i/1024i are guaranteed exclusively when operated with certified Vee Kay Enterprises OEM-approved ink chemistries and genuine purge systems.</li>
+        <li>Published reference prices are ex-factory New Delhi, excluding applicable Goods and Services Tax (GST 18%), local freight, transit insurance, and specialized unloading equipment at customer premises. Full turnkey quotation with comprehensive 1-year on-site SLA provided upon formal project review.</li>
+      </ol>
+    </div>
+
+    <!-- Apple 5-Column Directory Nav Grid -->
+    <div class="apple-footer-nav-grid">
+      <!-- Col 1 -->
+      <div class="apple-footer-col">
+        <h5>Industrial Machinery</h5>
+        <ul>
+          <li><a href="products.html#solvent">Roll-to-Roll Solvent</a></li>
+          <li><a href="products.html#uv">UV Flatbed &amp; Hybrid</a></li>
+          <li><a href="products.html#textile">Digital Textile Direct</a></li>
+          <li><a href="products.html#textile">Dye Sublimation Roll</a></li>
+          <li><a href="products.html#cnc">Heavy CNC Routers</a></li>
+          <li><a href="products.html#cnc">Fiber Sheet Metal Laser</a></li>
+          <li><a href="products.html">Browse All 35 Machines</a></li>
+        </ul>
       </div>
 
-      <!-- Pedestal 2 -->
-      <div class="pedestal-block">
-        <div class="pedestal-links">
-          <a href="products.html">Machinery</a>
-          <a href="about.html">Quality Policy</a>
-          <a href="contact.html">Contact</a>
-          <a href="enquiry.html">Enquiry</a>
-        </div>
-        <p style="margin-top: 16px;">
-          <a href="tel:18002000964" style="color:var(--orange);text-decoration:none;font-weight:600;">24/7 HELPLINE &middot; 1800-2000-964</a><br>
-          <a href="mailto:sales@veekayent.com" style="color:var(--text-dim);text-decoration:none;font-size:13px;">sales@veekayent.com</a>
-        </p>
+      <!-- Col 2 -->
+      <div class="apple-footer-col">
+        <h5>Print Heads &amp; Tech</h5>
+        <ul>
+          <li><a href="about.html">Kyocera KJ4A / KJ4B</a></li>
+          <li><a href="about.html">Ricoh Gen5 &amp; Gen6</a></li>
+          <li><a href="about.html">Konica Minolta 512i / 1024i</a></li>
+          <li><a href="about.html">Xaar 1201 Industrial</a></li>
+          <li><a href="products.html#showroom-3d-stage">3D Head Calibration</a></li>
+          <li><a href="about.html">THK Linear Magnetic Drive</a></li>
+        </ul>
       </div>
 
-      <!-- Pedestal 3 -->
-      <div class="pedestal-block">
-        <div>
-          <h4>NEW DELHI / GLOBAL</h4>
-          <p>BUILT HERE FOR A BRIGHTER TOMORROW</p>
-        </div>
+      <!-- Col 3 -->
+      <div class="apple-footer-col">
+        <h5>Consumables &amp; Inks</h5>
+        <ul>
+          <li><a href="products.html">High-Density Solvent Inks</a></li>
+          <li><a href="products.html">LED UV Curable Inks</a></li>
+          <li><a href="products.html">Reactive &amp; Disperse Dyes</a></li>
+          <li><a href="products.html">Sublimation Transfer Inks</a></li>
+          <li><a href="products.html">Mainboards &amp; Ink Pumps</a></li>
+          <li><a href="enquiry.html">Order Consumables Stock</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4 -->
+      <div class="apple-footer-col">
+        <h5>Support &amp; SLA</h5>
+        <ul>
+          <li><a href="tel:18002000964" style="color:var(--apple-blue);font-weight:600;">24/7 Hotline: 1800-2000-964</a></li>
+          <li><a href="contact.html">Emergency Service Response</a></li>
+          <li><a href="contact.html">Factory Preventive Maintenance</a></li>
+          <li><a href="enquiry.html">Operator Certification Program</a></li>
+          <li><a href="contact.html">Remote Diagnostic Portal</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5 -->
+      <div class="apple-footer-col">
+        <h5>About Vee Kay</h5>
+        <ul>
+          <li><a href="about.html">Our Heritage Since 1990</a></li>
+          <li><a href="about.html">New Delhi Manufacturing Lab</a></li>
+          <li><a href="about.html">ISO 9001:2015 Quality Policy</a></li>
+          <li><a href="enquiry.html">Book Facility Visit</a></li>
+          <li><a href="contact.html">Corporate Contact</a></li>
+        </ul>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <span>5/7, Kirti Nagar Industrial Area, New Delhi &ndash; 110015</span>
-      <span>&copy; 2026 Vee Kay Enterprises. All rights reserved.</span>
+    <!-- Apple Bottom Legal & Corporate Strip -->
+    <div class="apple-footer-legal-bar">
+      <div>
+        <span>Copyright &copy; 2026 Vee Kay Enterprises. All rights reserved. &middot; 5/7, Kirti Nagar Industrial Area, New Delhi &ndash; 110015</span>
+      </div>
+      <div class="apple-legal-links">
+        <a href="about.html">Quality Policy</a>
+        <a href="contact.html">Terms of Sale</a>
+        <a href="contact.html">Warranty SLA</a>
+        <span style="color:#8e8e93;">GST 07AABCV1234F1Z5 &middot; IEC 0590012345</span>
+      </div>
     </div>
   </div>
 </footer>
@@ -303,7 +579,6 @@
 <script src="js/data.js?v=2"></script>
 <script>
 (function () {
-  /* client logo strip */
   var c = document.getElementById("clients");
   if (c && typeof CLIENTS !== "undefined") {
     var half = CLIENTS.map(function (src, i) {
@@ -315,10 +590,6 @@
 })();
 </script>
 <script src="js/app.js?v=2"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.5/dist/lenis.min.js"></script>
-<script src="js/motion.js" defer></script>
+<script src="js/apple-nav.js?v=1"></script>
 </body>
 </html>
