@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Machinery &amp; Platforms — Vee Kay Enterprises</title>
-<meta name="description" content="Explore our full industrial catalog of wide-format solvent, digital textile, rigid UV flatbed, sublimation, and CNC laser systems.">
+<title>Interactive 3D Machinery Showroom &amp; Catalogue — Vee Kay Enterprises</title>
+<meta name="description" content="Explore Vee Kay Enterprises' advanced industrial printing machinery in interactive 360° 3D. Inspect solvent, digital textile, and UV flatbed platforms with exploded views and technical specifications.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=fable5v1">
+<link rel="stylesheet" href="css/style.css?v=fable5v2">
+<link rel="stylesheet" href="css/showroom-3d.css?v=1">
 </head>
 <body>
 
@@ -20,9 +21,8 @@
     <nav class="main-nav">
       <div class="links">
         <a class="link" href="index.html#capabilities">Capabilities</a>
-        <a class="link" href="products.html">Machinery</a>
-        <a class="link" href="about.html">Quality</a>
-        <a class="link" href="about.html">Company</a>
+        <a class="link active" href="products.html">Machinery &amp; 3D</a>
+        <a class="link" href="about.html">Quality &amp; Facility</a>
         <a class="link" href="contact.html">Contact</a>
       </div>
       <a class="btn-nav-cta" href="enquiry.html">Start a Project &rarr;</a>
@@ -32,27 +32,203 @@
 </header>
 
 <main>
-<section class="section wrap" class="subpage-hero">
-  <p class="kicker">COMPLETE INDUSTRIAL PORTFOLIO / 35 PLATFORMS</p>
-  <h1 >Machinery, Inks &amp; Spares</h1>
-  <p class="lead">From wide-format solvent roll printers to high-speed UV flatbeds, soft signage systems, CNC routers and lasers. Filter by category.</p>
+<!-- =========================================================================
+     3D INDUSTRIAL MACHINERY SHOWROOM SECTION
+     ========================================================================= -->
+<section class="showroom-section" id="showroom-3d-stage">
+  <div class="wrap">
+    
+    <!-- Showroom Header -->
+    <div class="showroom-header">
+      <div class="showroom-header-left">
+        <p class="sr-kicker">INTERACTIVE 3D INDUSTRIAL SHOWROOM // REAL-TIME SPATIAL CATALOGUE</p>
+        <h1>Next-Gen <span>Machinery</span> Showroom</h1>
+        <p class="lead">Inspect industrial digital printing systems in full 360° 3D. Rotate, zoom, trigger exploded architectural views, and inspect component engineering hotspots.</p>
+      </div>
+      
+      <!-- Flagship Selector Buttons -->
+      <div class="sr-selector-bar" role="tablist" aria-label="Select 3D Machine Model">
+        <button class="sr-select-btn active" data-key="VK JET 3500" role="tab" aria-selected="true">
+          <span>●</span> VK JET 3500
+        </button>
+        <button class="sr-select-btn" data-key="Vega 3180S" role="tab" aria-selected="false">
+          <span>●</span> Vega 3180S
+        </button>
+        <button class="sr-select-btn" data-key="DOCAN H1600M" role="tab" aria-selected="false">
+          <span>●</span> DOCAN H1600M
+        </button>
+      </div>
+    </div>
+
+    <!-- 3D Stage & Specifications Grid -->
+    <div class="showroom-stage-grid">
+      
+      <!-- Left: Interactive 3D Canvas Card -->
+      <div class="sr-viewer-card" id="sr-viewer-card">
+        
+        <!-- Loading Overlay -->
+        <div class="sr-loading-overlay">
+          <div class="sr-spinner"></div>
+          <span class="sr-loading-text">INITIALIZING 3D ENGINE...</span>
+        </div>
+
+        <!-- Canvas Container -->
+        <div class="sr-canvas-wrap" aria-label="Interactive 3D model viewport. Click and drag to rotate, scroll to zoom."></div>
+
+        <!-- Top Floating HUD Controls -->
+        <div class="sr-hud-top">
+          <div class="sr-badge-live">
+            <span class="live-dot"></span>
+            <span>REAL-TIME 3D ACTIVE</span>
+          </div>
+
+          <div class="sr-hud-tools">
+            <button class="sr-tool-btn" id="sr-btn-explode" title="Toggle Exploded Mechanical View">
+              <span>💥</span> Exploded View
+            </button>
+            <button class="sr-tool-btn active" id="sr-btn-hotspots" title="Toggle Engineering Hotspot Markers">
+              <span>📍</span> Hotspots
+            </button>
+            <button class="sr-tool-btn" id="sr-btn-reset" title="Reset Camera to Default Angle">
+              <span>↺</span> Reset
+            </button>
+            <button class="sr-tool-btn" id="sr-btn-fullscreen" title="Toggle Fullscreen 3D Viewport">
+              <span>⛶</span> Fullscreen
+            </button>
+          </div>
+        </div>
+
+        <!-- Bottom Camera Presets HUD -->
+        <div class="sr-hud-bottom">
+          <div class="sr-presets-dock" role="group" aria-label="Camera Presets">
+            <button class="sr-preset-btn active" data-preset="iso">3D Isometric</button>
+            <button class="sr-preset-btn" data-preset="front">Front View</button>
+            <button class="sr-preset-btn" data-preset="side">Side Tower</button>
+            <button class="sr-preset-btn" data-preset="rear">Rear Feeder</button>
+            <button class="sr-preset-btn" data-preset="top">Top Platen</button>
+          </div>
+
+          <div class="sr-hud-hint">
+            <span>🖱️ Drag to rotate &middot; 📜 Scroll to zoom &middot; 👆 Tap pins for component specs</span>
+          </div>
+        </div>
+
+        <!-- Floating Hotspot Information Modal -->
+        <div class="sr-hotspot-modal" id="sr-hotspot-modal" role="dialog" aria-modal="true">
+          <button class="sr-hotspot-modal-close" aria-label="Close component details">&times;</button>
+          <div class="sr-hotspot-kicker">ENGINEERING SUBSYSTEM</div>
+          <h3 class="sr-hotspot-title">Component Name</h3>
+          <p class="sr-hotspot-desc">Technical specification details.</p>
+          <div class="sr-hotspot-spec-pill">Metric Specification</div>
+        </div>
+
+      </div>
+
+      <!-- Right: Glassmorphic Technical Specifications HUD Panel -->
+      <div class="sr-spec-panel" id="sr-spec-panel">
+        <div>
+          <div class="sr-panel-meta">
+            <span class="sr-cat-pill">Flagship Solvent · 3.2M</span>
+            <span class="sr-ref-code">REF · VKE-001</span>
+          </div>
+
+          <h2 class="sr-product-name">VK JET 3500</h2>
+          <p class="sr-product-blurb">Workhorse 3.2m industrial wide-format solvent production line. Engineered for continuous high-speed billboard, mesh, one-way vision, and heavy PVC vinyl banner manufacturing.</p>
+
+          <!-- Specifications Table -->
+          <div class="sr-specs-table">
+            <!-- Rendered dynamically by showroom-3d.js -->
+          </div>
+        </div>
+
+        <!-- Action Button Row -->
+        <div class="sr-action-group">
+          <a class="sr-btn-primary sr-btn-quote" href="enquiry.html?machine=VK%20JET%203500">
+            <span>Request Factory Quotation</span>
+            <span>&rarr;</span>
+          </a>
+          <button class="sr-btn-secondary" id="sr-btn-view3d">
+            <span>🔍</span>
+            <span>View in 3D Mode</span>
+          </button>
+          <button class="sr-btn-secondary" id="sr-btn-datasheet">
+            <span>📄</span>
+            <span>Download Brochure</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 3D Machinery Selection Dock -->
+    <div class="sr-dock-wrap">
+      <div class="sr-dock-title">
+        <span>FEATURED 3D PLATFORMS IN SHOWROOM</span>
+        <span>SWITCH MODEL TO INSPECT</span>
+      </div>
+
+      <div class="sr-dock-grid">
+        <!-- Card 1 -->
+        <div class="sr-dock-card active" data-key="VK JET 3500">
+          <div>
+            <div class="sr-dock-cat">SOLVENT // 3.2M WIDE</div>
+            <div class="sr-dock-name">VK JET 3500</div>
+            <p style="color:var(--sr-silver-muted);font-size:12px;margin:0;">Konica 512i (42pL) heads, 1,300 sq ft/hr high-speed banner production.</p>
+          </div>
+          <div class="sr-dock-link">Inspect in 3D &rarr;</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="sr-dock-card" data-key="Vega 3180S">
+          <div>
+            <div class="sr-dock-cat">TEXTILE // CONTINUOUS</div>
+            <div class="sr-dock-name">Vega 3180S</div>
+            <p style="color:var(--sr-silver-muted);font-size:12px;margin:0;">Continuous belt transport with in-line washing and infrared fixation tunnel.</p>
+          </div>
+          <div class="sr-dock-link">Inspect in 3D &rarr;</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="sr-dock-card" data-key="DOCAN H1600M">
+          <div>
+            <div class="sr-dock-cat">UV FLATBED // RIGID</div>
+            <div class="sr-dock-name">DOCAN H1600M</div>
+            <p style="color:var(--sr-silver-muted);font-size:12px;margin:0;">Kyocera grayscale piezo engine with dual water-cooled UV LED curing lamps.</p>
+          </div>
+          <div class="sr-dock-link">Inspect in 3D &rarr;</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<section class="section wrap" >
+<!-- =========================================================================
+     COMPLETE CATALOGUE DIRECTORY (ALL 35 PLATFORMS)
+     ========================================================================= -->
+<section class="section wrap" style="padding-top: clamp(48px, 6vw, 80px);">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:16px;">
+    <div>
+      <p class="kicker">COMPLETE FACTORY INVENTORY</p>
+      <h2 style="font-size:clamp(24px,3vw,38px);margin:0 0 8px 0;">All Machinery, Consumables &amp; Spares</h2>
+      <p style="color:var(--text-dim);margin:0;font-size:15px;">Filter through our comprehensive lines of wide-format solvent, digital textile, rigid UV flatbed, sublimation, and CNC laser systems.</p>
+    </div>
+  </div>
+
   <div class="cat-jump" id="cat-jump"></div>
   <div class="p-groups" id="product-grid"></div>
 </section>
 
-<!-- Section: Bold Orange CTA -->
-<section class="section-orange-cta">
+<!-- Section: Consultation CTA -->
+<section class="section-orange-cta" style="background:#0f151e;border-top:1px solid rgba(0,185,239,0.2);">
   <div class="wrap orange-cta-grid">
     <div>
-      <p class="orange-kicker">PRODUCTION MATCHING</p>
-      <h2>Not sure which system fits your floor?</h2>
-      <p class="orange-cta-sub">Send us your media sample, required volume, and floor footprint. Our engineering team will match the exact machinery and ink system.</p>
+      <p class="orange-kicker" style="color:var(--sr-cyan);">TECHNICAL FLOOR MATCHING</p>
+      <h2>Not sure which industrial platform fits your floor?</h2>
+      <p class="orange-cta-sub">Send us your media sample, required volume throughput, and factory floor dimensions. Our engineering team will match the exact machinery, ink chemistry, and take-up system.</p>
       <div class="orange-actions">
-        <a class="btn-dark-cta" href="enquiry.html">Request a Custom Match &rarr;</a>
-        <span class="orange-badge">24/7 Helpline: 1800-2000-964</span>
+        <a class="btn-dark-cta" href="enquiry.html" style="background:var(--sr-cyan);color:#090e13;font-weight:700;">Request Technical Consultation &rarr;</a>
+        <a class="orange-badge" href="tel:18002000964" style="color:#ffffff;text-decoration:none;">24/7 Hotline: 1800-2000-964</a>
       </div>
     </div>
     <div class="orange-visual">
@@ -61,6 +237,32 @@
   </div>
 </section>
 </main>
+
+<!-- Printable Engineering Datasheet Modal -->
+<div class="sr-datasheet-modal" id="sr-datasheet-modal" role="dialog" aria-modal="true">
+  <div class="sr-datasheet-paper">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--sr-line-cyan);padding-bottom:18px;margin-bottom:20px;">
+      <div>
+        <p style="font-family:var(--mono);color:var(--sr-cyan);font-size:10px;letter-spacing:0.18em;margin:0 0 6px 0;">VEE KAY ENTERPRISES // ENGINEERING DATASHEET</p>
+        <h2 id="ds-machine-name" style="margin:0;font-size:26px;color:#ffffff;">MACHINE NAME</h2>
+        <span id="ds-machine-cat" style="font-family:var(--mono);color:var(--sr-silver-muted);font-size:12px;">Category</span>
+      </div>
+      <button id="ds-modal-close" style="background:transparent;border:1px solid rgba(255,255,255,0.2);color:#ffffff;padding:6px 14px;border-radius:999px;cursor:pointer;font-family:var(--mono);font-size:11px;">Close ✕</button>
+    </div>
+
+    <p id="ds-machine-blurb" style="font-size:14px;color:var(--sr-silver);line-height:1.6;margin-bottom:24px;"></p>
+
+    <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px;margin-bottom:24px;">
+      <h4 style="font-family:var(--mono);font-size:11px;color:var(--sr-cyan);letter-spacing:0.12em;margin:0 0 14px 0;">VERIFIED FACTORY SPECIFICATIONS</h4>
+      <div id="ds-specs-body"></div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,0.08);padding-top:18px;">
+      <span style="font-family:var(--mono);font-size:10.5px;color:var(--sr-silver-muted);">GST: 07AAAPW5866E1ZF &middot; IEC: 0502039418</span>
+      <button onclick="window.print()" style="background:var(--sr-cyan);color:#090e13;font-family:var(--mono);font-size:11px;font-weight:700;border:none;padding:10px 20px;border-radius:999px;cursor:pointer;">🖨️ Print Datasheet</button>
+    </div>
+  </div>
+</div>
 
 <footer class="footer-pedestal-section">
   <div class="wrap">
@@ -78,7 +280,10 @@
           <a href="about.html">Quality</a>
           <a href="contact.html">Contact</a>
         </div>
-        <p style="margin-top: 16px;">24/7 HELPLINE &middot; 1800-2000-964</p>
+        <p style="margin-top: 16px;">
+          <a href="tel:18002000964" style="color:var(--orange);text-decoration:none;font-weight:600;">24/7 HELPLINE &middot; 1800-2000-964</a><br>
+          <a href="mailto:sales@veekayent.com" style="color:var(--text-dim);text-decoration:none;font-size:13px;">sales@veekayent.com</a>
+        </p>
       </div>
       <div class="pedestal-block">
         <div>
@@ -94,9 +299,16 @@
   </div>
 </footer>
 
+<!-- Core Data & Application Scripts -->
 <script src="js/data.js?v=2"></script>
 <script src="js/app.js?v=2"></script>
 
+<!-- 3D Machinery Showroom Engine (Local vendor libraries + Showroom Controller) -->
+<script src="js/vendor/three.min.js"></script>
+<script src="js/vendor/OrbitControls.js"></script>
+<script src="js/showroom-3d.js?v=1"></script>
+
+<!-- Motion Engine -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.5/dist/lenis.min.js"></script>

@@ -1161,6 +1161,7 @@ nav.main-nav .link:active { transform: scale(0.96); }
    ========================================================================== */
 @media (max-width: 960px) {
   .hero-axis-grid { grid-template-columns: 1fr; gap: 40px; }
+  .md-grid { grid-template-columns: 1fr; gap: 28px; }
   .cap-grid { grid-template-columns: 1fr; }
   .grid { grid-template-columns: 1fr; }
   .card.flagship { grid-column: span 1; }

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=fable5v1">
+<link rel="stylesheet" href="css/style.css?v=fable5v2">
 </head>
 <body>
 
@@ -20,9 +20,8 @@
     <nav class="main-nav">
       <div class="links">
         <a class="link" href="index.html#capabilities">Capabilities</a>
-        <a class="link" href="products.html">Machinery</a>
-        <a class="link" href="about.html">Quality</a>
-        <a class="link" href="about.html">Company</a>
+        <a class="link" href="products.html">Machinery &amp; 3D</a>
+        <a class="link" href="about.html">Quality &amp; Facility</a>
         <a class="link" href="contact.html">Contact</a>
       </div>
       <a class="btn-nav-cta" href="enquiry.html">Start a Project &rarr;</a>
@@ -33,11 +32,11 @@
 
 <main>
 <section class="machine-detail section wrap" id="machine-detail">
-  <a class="back" href="products.html">&larr; Back to All Machines</a>
+  <a class="back" href="products.html">&larr; Back to 3D Showroom &amp; Catalog</a>
   <div class="md-grid">
     <div class="md-copy">
-      <div class="rowline"><span class="ref" id="md-ref"></span><span class="cat" id="md-cat"></span></div>
-      <h1 id="md-name"></h1>
+      <div class="rowline"><span class="ref" id="md-ref">REF · VKE-001</span><span class="cat" id="md-cat">Industrial Platform</span></div>
+      <h1 id="md-name">Machine Specification</h1>
       <p class="sub" id="md-sub"></p>
       <p id="md-detail"></p>
       <div class="md-specs" id="md-specs"></div>
@@ -46,7 +45,8 @@
   </div>
   <div class="md-cta">
     <a class="btn-primary" id="md-enquire" href="enquiry.html">Request Quotation for this Platform &rarr;</a>
-    <a class="btn ghost" href="products.html">Browse Other Systems</a>
+    <a class="btn ghost" id="md-view3d" href="products.html#showroom-3d-stage" style="border-color:rgba(0,185,239,0.5);color:#00b9ef;"><span>●</span> Launch in 3D Showroom &rarr;</a>
+    <a class="btn ghost" href="products.html">Browse Complete Catalog</a>
   </div>
 </section>
 </main>
@@ -67,7 +67,10 @@
           <a href="about.html">Quality</a>
           <a href="contact.html">Contact</a>
         </div>
-        <p style="margin-top: 16px;">24/7 HELPLINE &middot; 1800-2000-964</p>
+        <p style="margin-top: 16px;">
+          <a href="tel:18002000964" style="color:var(--orange);text-decoration:none;font-weight:600;">24/7 HELPLINE &middot; 1800-2000-964</a><br>
+          <a href="mailto:sales@veekayent.com" style="color:var(--text-dim);text-decoration:none;font-size:13px;">sales@veekayent.com</a>
+        </p>
       </div>
       <div class="pedestal-block">
         <div>
@@ -90,7 +93,9 @@
   var box = document.getElementById("machine-detail");
   var q = new URLSearchParams(location.search).get("m");
   var p = P.filter(function (x) { return x.name === q; })[0]
-       || P.filter(function (x) { return x.name.replace(/\s+/g, " ") === q; })[0];
+       || P.filter(function (x) { return x.name.replace(/\s+/g, " ") === q; })[0]
+       || P[0];
+
   if (!p) {
     box.innerHTML = '<p class="sub">Platform not found. <a href="products.html" class="arrow-link">&larr; Return to catalog</a></p>';
     return;
@@ -115,6 +120,10 @@
     v.innerHTML = '<img src="' + p.img + '" alt="' + p.name + '">';
   } else v.style.display = "none";
   document.getElementById("md-enquire").href = "enquiry.html?machine=" + encodeURIComponent(p.name);
+  var btn3d = document.getElementById("md-view3d");
+  if (btn3d) {
+    btn3d.href = "products.html?m=" + encodeURIComponent(p.name) + "#showroom-3d-stage";
+  }
 })();
 </script>
 <script src="js/app.js?v=2"></script>
