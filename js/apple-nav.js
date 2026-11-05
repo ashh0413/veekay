@@ -1,10 +1,15 @@
-// Apple Navigation & Flyout Mega-Menus for Vee Kay Enterprises (Debounced & Glitch-Free)
+// Apple Navigation & Mega-Menu Flyout Controller for Vee Kay Enterprises
+// Robust, debounced, zero-jitter hover architecture matching apple.com
 (function () {
-  const navItems = document.querySelectorAll('.apple-nav-item[data-flyout]');
+  const globalNav = document.querySelector('.apple-global-nav');
+  const navItemsWithFlyout = document.querySelectorAll('.apple-nav-item[data-flyout]');
+  const nonFlyoutItems = document.querySelectorAll('.apple-logo-link, .apple-nav-actions, .apple-nav-item:not([data-flyout])');
   const flyouts = document.querySelectorAll('.apple-flyout-overlay');
   const dimmer = document.getElementById('apple-nav-dimmer');
   const mobileBurger = document.getElementById('apple-mobile-burger');
+
   let activeFlyout = null;
+  let activeNavItem = null;
   let closeTimer = null;
 
   function clearCloseTimer() {
@@ -17,85 +22,107 @@
   function closeAllFlyouts() {
     clearCloseTimer();
     flyouts.forEach(f => f.classList.remove('open'));
-    navItems.forEach(n => n.classList.remove('active'));
+    navItemsWithFlyout.forEach(n => n.classList.remove('active'));
     if (dimmer) dimmer.classList.remove('active');
     activeFlyout = null;
+    activeNavItem = null;
   }
 
-  function openFlyout(item, targetFlyout) {
-    clearCloseTimer();
-    if (activeFlyout && activeFlyout !== targetFlyout) {
-      // Switching between tabs: close others without animation flicker
-      flyouts.forEach(f => {
-        if (f !== targetFlyout) f.classList.remove('open');
-      });
-      navItems.forEach(n => {
-        if (n !== item) n.classList.remove('active');
-      });
-    }
-
-    item.classList.add('active');
-    targetFlyout.classList.add('open');
-    if (dimmer) dimmer.classList.add('active');
-    activeFlyout = targetFlyout;
-  }
-
-  function queueClose() {
+  function queueClose(delay = 250) {
     clearCloseTimer();
     closeTimer = setTimeout(() => {
       closeAllFlyouts();
-    }, 180); // 180ms graceful hover buffer prevents stutter across mouse transitions
+    }, delay);
   }
 
-  navItems.forEach(item => {
+  function switchFlyout(navItem, targetFlyout) {
+    clearCloseTimer();
+
+    // If another flyout is open, swap instantly without closing the overlay container
+    if (activeFlyout && activeFlyout !== targetFlyout) {
+      flyouts.forEach(f => {
+        if (f !== targetFlyout) f.classList.remove('open');
+      });
+      navItemsWithFlyout.forEach(n => {
+        if (n !== navItem) n.classList.remove('active');
+      });
+    }
+
+    navItem.classList.add('active');
+    targetFlyout.classList.add('open');
+    if (dimmer) dimmer.classList.add('active');
+
+    activeFlyout = targetFlyout;
+    activeNavItem = navItem;
+  }
+
+  // 1. Navigation items with mega-menus
+  navItemsWithFlyout.forEach(item => {
     const targetId = item.getAttribute('data-flyout');
     const targetFlyout = document.getElementById(targetId);
-
     if (!targetFlyout) return;
 
     item.addEventListener('mouseenter', () => {
-      openFlyout(item, targetFlyout);
-    });
-
-    item.addEventListener('mouseleave', () => {
-      queueClose();
+      switchFlyout(item, targetFlyout);
     });
 
     item.addEventListener('click', (e) => {
-      e.preventDefault();
+      // Allow toggle on mobile/touch, link navigation on desktop if already active
       if (item.classList.contains('active')) {
-        closeAllFlyouts();
+        // Allow default link navigation if clicked while already open
       } else {
-        openFlyout(item, targetFlyout);
+        e.preventDefault();
+        switchFlyout(item, targetFlyout);
       }
     });
   });
 
-  flyouts.forEach(flyout => {
-    // Keep open when mouse enters the flyout panel
-    flyout.addEventListener('mouseenter', () => {
-      clearCloseTimer();
-    });
-
-    // Queue close when mouse exits the flyout panel
-    flyout.addEventListener('mouseleave', () => {
-      queueClose();
+  // 2. Non-flyout items inside navbar (Logo, 3D Showroom, Search, Cart)
+  // When cursor moves to items without menus, gracefully close open flyouts
+  nonFlyoutItems.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      if (activeFlyout) {
+        queueClose(150);
+      }
     });
   });
 
-  if (dimmer) {
-    dimmer.addEventListener('click', closeAllFlyouts);
-    dimmer.addEventListener('mouseenter', () => {
-      queueClose();
+  // 3. Keep flyout open while cursor is inside ANY open flyout panel
+  flyouts.forEach(flyout => {
+    flyout.addEventListener('mouseenter', () => {
+      clearCloseTimer();
+    });
+    flyout.addEventListener('mouseleave', () => {
+      queueClose(250);
+    });
+  });
+
+  // 4. Global nav mouse leave: start graceful close countdown
+  if (globalNav) {
+    globalNav.addEventListener('mouseenter', () => {
+      clearCloseTimer();
+    });
+    globalNav.addEventListener('mouseleave', (e) => {
+      // If moving downwards into the flyout overlay, do NOT close
+      const toEl = e.relatedTarget;
+      if (toEl && (toEl.closest('.apple-flyout-overlay') || toEl.classList?.contains('apple-flyout-overlay'))) {
+        return;
+      }
+      queueClose(250);
     });
   }
 
-  // Escape key closes flyout immediately
+  // 5. Dimmer click closes immediately
+  if (dimmer) {
+    dimmer.addEventListener('click', closeAllFlyouts);
+  }
+
+  // 6. Escape key dismisses
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeAllFlyouts();
   });
 
-  // Mobile menu toggle
+  // 7. Mobile hamburger toggle
   if (mobileBurger) {
     mobileBurger.addEventListener('click', () => {
       const mobDrawer = document.getElementById('apple-mobile-drawer');

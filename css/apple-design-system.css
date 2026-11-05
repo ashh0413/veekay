@@ -104,6 +104,7 @@ body.apple-theme {
 .apple-nav-links {
   display: flex;
   align-items: center;
+  height: 100%;
   gap: clamp(14px, 2.2vw, 32px);
   list-style: none;
   margin: 0;
@@ -112,6 +113,9 @@ body.apple-theme {
 
 .apple-nav-item {
   position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .apple-nav-link {
@@ -121,11 +125,14 @@ body.apple-theme {
   text-decoration: none;
   letter-spacing: -0.01em;
   transition: color 0.18s ease;
-  padding: 12px 0;
-  display: inline-block;
+  padding: 12px 6px;
+  display: flex;
+  align-items: center;
+  height: 100%;
   cursor: pointer;
   background: none;
   border: none;
+  box-sizing: border-box;
 }
 .apple-nav-link:hover,
 .apple-nav-item.active .apple-nav-link {
