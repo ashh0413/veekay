@@ -4,150 +4,415 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About &amp; Quality — Vee Kay Enterprises</title>
-<meta name="description" content="Since 1990 — one of India's pioneers in wide-format digital printing. Total solutions across textile, signage, solvent and UV.">
+<meta name="description" content="Since 1990 — pioneer in wide-format digital printing and industrial manufacturing. Total solutions across textile, signage, solvent and UV.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=fable5v1">
+<link rel="stylesheet" href="css/style.css?v=apple1">
+<link rel="stylesheet" href="css/apple-design-system.css?v=apple1">
 </head>
-<body>
+<body class="apple-theme">
 
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand-title" href="index.html">
-      VEE KAY ENTERPRISES
+<!-- 1. Apple Global Frosted Navigation Bar (44px) -->
+<header class="apple-global-nav">
+  <div class="apple-nav-inner">
+    <a class="apple-logo-link" href="index.html" aria-label="Vee Kay Enterprises Home">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      <span>VEE KAY</span>
     </a>
-    <nav class="main-nav">
-      <div class="links">
-        <a class="link" href="index.html#capabilities">Capabilities</a>
-        <a class="link" href="products.html">Machinery</a>
-        <a class="link" href="about.html">Quality</a>
-        <a class="link" href="about.html">Company</a>
-        <a class="link" href="contact.html">Contact</a>
-      </div>
-      <a class="btn-nav-cta" href="enquiry.html">Start a Project &rarr;</a>
-      <button class="burger" aria-label="Toggle Navigation"><span></span><span></span><span></span></button>
-    </nav>
+
+    <ul class="apple-nav-links" role="menubar">
+      <li class="apple-nav-item" data-flyout="flyout-solvent" role="none">
+        <a class="apple-nav-link" href="products.html#solvent" role="menuitem">Roll-to-Roll</a>
+      </li>
+      <li class="apple-nav-item" data-flyout="flyout-uv" role="none">
+        <a class="apple-nav-link" href="products.html#uv" role="menuitem">Flatbed UV</a>
+      </li>
+      <li class="apple-nav-item" data-flyout="flyout-textile" role="none">
+        <a class="apple-nav-link" href="products.html#textile" role="menuitem">Digital Textile</a>
+      </li>
+      <li class="apple-nav-item" data-flyout="flyout-cnc" role="none">
+        <a class="apple-nav-link" href="products.html#cnc" role="menuitem">CNC &amp; Laser</a>
+      </li>
+      <li class="apple-nav-item active" data-flyout="flyout-tech" role="none">
+        <a class="apple-nav-link" href="about.html" role="menuitem">Technology &amp; SLA</a>
+      </li>
+      <li class="apple-nav-item" role="none">
+        <a class="apple-nav-link" href="products.html#showroom-3d-stage" role="menuitem">3D Showroom</a>
+      </li>
+    </ul>
+
+    <div class="apple-nav-actions">
+      <a href="products.html" class="apple-icon-btn" aria-label="Search catalog">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </a>
+      <a href="enquiry.html" class="apple-icon-btn apple-quote-badge" aria-label="Quote Shortlist">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span class="apple-badge-count">3</span>
+      </a>
+      <button class="apple-mobile-burger" id="apple-mobile-burger" aria-label="Open mobile menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg>
+      </button>
+    </div>
   </div>
 </header>
 
+<div class="apple-nav-dimmer" id="apple-nav-dimmer"></div>
+
+<!-- Flyout 1: Roll-to-Roll -->
+<div class="apple-flyout-overlay" id="flyout-solvent" role="region" aria-label="Roll to Roll Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Explore Lineup</h3>
+      <div class="flyout-giant-title">Roll-to-Roll Systems</div>
+      <a href="products.html#solvent" class="flyout-explore-all">Explore all roll printers &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="machine.html?m=Colorjet%20Irisjet%203200" class="flyout-model-card">
+        <img src="assets/img/curated/colorjet_irisjet_roll.jpg" alt="Colorjet Irisjet" class="flyout-model-thumb">
+        <span class="flyout-model-name">Irisjet Pro 3200</span>
+        <span class="flyout-model-spec">16 Kyocera Heads · 360 m²/hr</span>
+      </a>
+      <a href="machine.html?m=VK%20JET%203500" class="flyout-model-card">
+        <img src="assets/img/products-items/VK-JET-3500.png" alt="VK-JET 3500" class="flyout-model-thumb">
+        <span class="flyout-model-name">VK-JET 3500</span>
+        <span class="flyout-model-spec">Konica 1024i · High-Speed Flex</span>
+      </a>
+      <a href="machine.html?m=Q-Jet%20Plus%201024" class="flyout-model-card">
+        <img src="assets/img/products-items/Q-Jet-Plus-1024.png" alt="Q-Jet Plus" class="flyout-model-thumb">
+        <span class="flyout-model-name">Q-Jet Plus 1024</span>
+        <span class="flyout-model-spec">Eco-Solvent · Heavy Steel Bed</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Quick Links</h4>
+      <ul class="flyout-link-list">
+        <li><a href="products.html#solvent">Compare Roll Specifications</a></li>
+        <li><a href="about.html">Konica Minolta &amp; Kyocera SLA</a></li>
+        <li><a href="enquiry.html">Request Factory Pricing</a></li>
+        <li><a href="contact.html">Order Sample Media Rolls</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Flyout 2: Flatbed UV -->
+<div class="apple-flyout-overlay" id="flyout-uv" role="region" aria-label="Flatbed UV Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Explore Lineup</h3>
+      <div class="flyout-giant-title">UV Flatbed &amp; Hybrid</div>
+      <a href="products.html#uv" class="flyout-explore-all">Explore all UV platforms &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="machine.html?m=DOCAN%20H1600M" class="flyout-model-card">
+        <img src="assets/img/curated/uv_flatbed.jpg" alt="DOCAN H1600M" class="flyout-model-thumb">
+        <span class="flyout-model-name">DOCAN H1600M</span>
+        <span class="flyout-model-spec">Ricoh Gen6 · White + Varnish</span>
+      </a>
+      <a href="machine.html?m=DOCAN%20UV%20Flatbed%202513" class="flyout-model-card">
+        <img src="assets/img/curated/uv_acrylic.jpg" alt="DOCAN 2513" class="flyout-model-thumb">
+        <span class="flyout-model-name">DOCAN 2513 Ultra</span>
+        <span class="flyout-model-spec">2.5m &times; 1.3m Rigid Glass Bed</span>
+      </a>
+      <a href="products.html#uv" class="flyout-model-card">
+        <img src="assets/img/curated/uv_signage.jpg" alt="UV Hybrid Roll" class="flyout-model-thumb">
+        <span class="flyout-model-name">H3000 Heavy Hybrid</span>
+        <span class="flyout-model-spec">Dual Roll + Flatbed Substrates</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Substrate Testing</h4>
+      <ul class="flyout-link-list">
+        <li><a href="products.html#uv">Rigid Acrylic &amp; Architectural Glass</a></li>
+        <li><a href="products.html#uv">Aluminum Composite &amp; Ceramic</a></li>
+        <li><a href="enquiry.html">Schedule UV Adhesion Test</a></li>
+        <li><a href="contact.html">LED Curing Lamp Specifications</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Flyout 3: Digital Textile -->
+<div class="apple-flyout-overlay" id="flyout-textile" role="region" aria-label="Digital Textile Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Explore Lineup</h3>
+      <div class="flyout-giant-title">Digital Textile</div>
+      <a href="products.html#textile" class="flyout-explore-all">Explore all textile platforms &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="machine.html?m=Vega%203180S" class="flyout-model-card">
+        <img src="assets/img/curated/textile_fashion.jpg" alt="Vega 3180S" class="flyout-model-thumb">
+        <span class="flyout-model-name">Vega 3180S Direct</span>
+        <span class="flyout-model-spec">16 Heads · Continuous Belt Feed</span>
+      </a>
+      <a href="products.html#textile" class="flyout-model-card">
+        <img src="assets/img/curated/textile_roll.jpg" alt="Textile Roll" class="flyout-model-thumb">
+        <span class="flyout-model-name">Subli-Pro 1900</span>
+        <span class="flyout-model-spec">High-Speed Industrial Transfer</span>
+      </a>
+      <a href="products.html#textile" class="flyout-model-card">
+        <img src="assets/img/curated/sublimation_main.jpg" alt="Direct Garment" class="flyout-model-thumb">
+        <span class="flyout-model-name">TexJet Master</span>
+        <span class="flyout-model-spec">Direct-to-Film &amp; Garment Roll</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Fabric Applications</h4>
+      <ul class="flyout-link-list">
+        <li><a href="products.html#textile">Reactive &amp; Disperse Inks</a></li>
+        <li><a href="products.html#textile">Pure Silk, Chiffon &amp; Cotton</a></li>
+        <li><a href="about.html">Steam &amp; Wash Calibration</a></li>
+        <li><a href="enquiry.html">Request Color Swatch Book</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Flyout 4: CNC & Finishing -->
+<div class="apple-flyout-overlay" id="flyout-cnc" role="region" aria-label="CNC and Laser Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Explore Lineup</h3>
+      <div class="flyout-giant-title">CNC &amp; Finishing</div>
+      <a href="products.html#cnc" class="flyout-explore-all">Explore cutting platforms &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="products.html#cnc" class="flyout-model-card">
+        <img src="assets/img/curated/cnc_router.jpg" alt="CNC Router" class="flyout-model-thumb">
+        <span class="flyout-model-name">FC-1325 Heavy Duty</span>
+        <span class="flyout-model-spec">9kW Air Spindle · Vacuum Bed</span>
+      </a>
+      <a href="products.html#cnc" class="flyout-model-card">
+        <img src="assets/img/curated/laser_metal.jpg" alt="Fiber Laser" class="flyout-model-thumb">
+        <span class="flyout-model-name">Fiber Laser 3015</span>
+        <span class="flyout-model-spec">Raycus 3kW · Sheet Metal Cut</span>
+      </a>
+      <a href="products.html#cnc" class="flyout-model-card">
+        <img src="assets/img/curated/laser_cutting.jpg" alt="CO2 Laser" class="flyout-model-thumb">
+        <span class="flyout-model-name">CO2 Laser 1390</span>
+        <span class="flyout-model-spec">Precision Acrylic &amp; Wood Cut</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Tooling &amp; Cut</h4>
+      <ul class="flyout-link-list">
+        <li><a href="products.html#cnc">Heavy Steel Fabrication Gantries</a></li>
+        <li><a href="products.html#cnc">Channel Letter Bending Machines</a></li>
+        <li><a href="enquiry.html">Request Tooling Demonstration</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Flyout 5: Technology & SLA -->
+<div class="apple-flyout-overlay" id="flyout-tech" role="region" aria-label="Technology and SLA Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Industrial Heritage</h3>
+      <div class="flyout-giant-title">Technology &amp; SLA</div>
+      <a href="about.html" class="flyout-explore-all">Read our engineering history &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="about.html" class="flyout-model-card">
+        <img src="assets/img/curated/print_head.jpg" alt="Print Heads" class="flyout-model-thumb">
+        <span class="flyout-model-name">Certified Print Heads</span>
+        <span class="flyout-model-spec">Kyocera, Ricoh &amp; Konica Minolta</span>
+      </a>
+      <a href="about.html" class="flyout-model-card">
+        <img src="assets/img/curated/facility_hall.jpg" alt="Facility Hall" class="flyout-model-thumb">
+        <span class="flyout-model-name">New Delhi Factory Lab</span>
+        <span class="flyout-model-spec">Kirti Nagar Industrial Area</span>
+      </a>
+      <a href="about.html" class="flyout-model-card">
+        <img src="assets/img/curated/inks_cmyk.jpg" alt="Genuine Inks" class="flyout-model-thumb">
+        <span class="flyout-model-name">Genuine OEM Inks</span>
+        <span class="flyout-model-spec">High-density pigment dispersion</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Support &amp; Guarantee</h4>
+      <ul class="flyout-link-list">
+        <li><a href="contact.html">24/7 Hotline SLA Guarantee</a></li>
+        <li><a href="about.html">ISO 9001 Certified Factory</a></li>
+        <li><a href="enquiry.html">Book On-Site Operator Training</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <main>
-<section class="section wrap" class="subpage-hero">
-  <p class="kicker">ABOUT VEE KAY / EST. 1990</p>
-  <h1 >A Generation Ahead.</h1>
-  <p class="lead">Started in 1990, Vee Kay Enterprises is one of the pioneers in the wide-format digital printing and industrial manufacturing market in India.</p>
+<section class="apple-subpage-hero">
+  <div class="apple-wrap">
+    <p class="apple-kicker">HERITAGE // EST. 1990</p>
+    <h1>A Generation Ahead.</h1>
+    <p class="apple-lead">Founded in 1990, Vee Kay Enterprises is one of India's original pioneers in wide-format digital printing systems, precision manufacturing, and mission-critical factory supply chains.</p>
+  </div>
 </section>
 
 <!-- Metrics Grid -->
-<section class="section wrap" >
-  <div class="hero-metrics" style="max-width: 100%;">
-    <div class="metric-block">
-      <span class="metric-val">1990</span>
-      <span class="metric-lbl">Established &middot; 35+ Years</span>
+<section class="apple-wrap">
+  <div class="apple-metrics-grid">
+    <div class="apple-metric-card">
+      <span class="val">1990</span>
+      <span class="lbl">Established &middot; 35+ Years of Trust</span>
     </div>
-    <div class="metric-block">
-      <span class="metric-val">10+ Cities</span>
-      <span class="metric-lbl">Direct Service Presence</span>
+    <div class="apple-metric-card">
+      <span class="val">10+ Cities</span>
+      <span class="lbl">Direct Field Service Presence</span>
     </div>
-    <div class="metric-block">
-      <span class="metric-val">ISO 9001</span>
-      <span class="metric-lbl">Certified Quality Standards</span>
-    </div>
-  </div>
-</section>
-
-<!-- Facility & Showcase -->
-<section class="section wrap" >
-  <div class="cap-header" style="margin-bottom: 28px;">
-    <div class="cap-header-left">
-      <p class="kicker">TESTING &amp; DEMONSTRATION</p>
-      <h2>Engineered testing floors.</h2>
-    </div>
-  </div>
-  <div class="facility-grid">
-    <div class="facility-card feat">
-      <img src="assets/img/curated/facility_hall.jpg" alt="Vee Kay technology and demonstration facility" loading="lazy">
-      <div class="facility-caption"><span>Delhi Demonstration &amp; Production Facility</span></div>
-    </div>
-    <div class="facility-card">
-      <img src="assets/img/curated/facility_clean.jpg" alt="Precision testing laboratory" loading="lazy">
-      <div class="facility-caption"><span>Stringent Quality Checks &amp; Calibration</span></div>
-    </div>
-    <div class="facility-card">
-      <img src="assets/img/curated/solvent_main.jpg" alt="Active print testing floor" loading="lazy">
-      <div class="facility-caption"><span>High-Volume Industrial Staging</span></div>
+    <div class="apple-metric-card">
+      <span class="val">ISO 9001</span>
+      <span class="lbl">Certified Manufacturing Facility</span>
     </div>
   </div>
 </section>
 
-<!-- Narrative Section -->
-<section class="section wrap" >
-  <div class="form-card" style="max-width: 880px;">
-    <p class="kicker">TOTAL PRODUCTION SOLUTIONS</p>
-    <h2 style="font-size: 24px; margin-bottom: 20px;">Who We Are</h2>
-    <p style="color: var(--text-dim); line-height: 1.7; margin-bottom: 18px;">Vee Kay Enterprises integrates sophisticated industrial technology with a reliable supply chain. We manufacture and import high-precision digital solvent printers, direct textile lines, rigid UV flatbeds, CNC routers, and fiber laser cutters.</p>
-    <p style="color: var(--text-dim); line-height: 1.7; margin-bottom: 28px;">Our promise is complete accountability: from demonstration and installation to 24/7 technical hotline dispatch and original OEM consumables stocked in New Delhi.</p>
-    <a class="btn-primary" href="products.html">Explore Production Platforms &rarr;</a>
-  </div>
-</section>
-
-<!-- Orange CTA -->
-<section class="section-orange-cta">
-  <div class="wrap orange-cta-grid">
+<!-- Facility & Testing Showcase -->
+<section class="apple-wrap">
+  <div class="apple-section-headline-group" style="margin-bottom:28px;">
     <div>
-      <p class="orange-kicker">TALK TO A TECHNICAL SPECIALIST</p>
-      <h2>Schedule a demonstration.</h2>
-      <p class="orange-cta-sub">Visit our Kirti Nagar industrial facility to test your actual media, inspect print resolutions, and calculate production economics.</p>
-      <div class="orange-actions">
-        <a class="btn-dark-cta" href="contact.html">Book Facility Tour &rarr;</a>
-        <span class="orange-badge">Direct Line: 1800-2000-964</span>
+      <p class="apple-kicker">INFRASTRUCTURE &amp; R&amp;D</p>
+      <h2 style="font-size:clamp(26px,3.4vw,40px);margin:0 0 8px 0;color:#ffffff;">Engineered Testing Floors.</h2>
+      <p style="color:var(--apple-text-dim);margin:0;font-size:15.5px;">Every industrial gantry, vacuum platen, and linear magnetic rail is assembled and calibrated under rigorous cleanroom conditions in New Delhi.</p>
+    </div>
+  </div>
+
+  <div class="apple-facility-grid">
+    <div class="apple-facility-card feat">
+      <img src="assets/img/curated/facility_hall.jpg" alt="Vee Kay technology and demonstration facility" loading="lazy">
+      <div class="apple-facility-caption">Delhi Demonstration &amp; Production Facility &middot; Kirti Nagar Industrial Area</div>
+    </div>
+    <div class="apple-facility-card">
+      <img src="assets/img/curated/facility_clean.jpg" alt="Precision testing laboratory" loading="lazy">
+      <div class="apple-facility-caption">Stringent Quality Checks &amp; Micron-Level Calibration</div>
+    </div>
+    <div class="apple-facility-card">
+      <img src="assets/img/curated/solvent_main.jpg" alt="Active print testing floor" loading="lazy">
+      <div class="apple-facility-caption">High-Volume Staging Floor &middot; 24/7 Stress Endurance</div>
+    </div>
+  </div>
+</section>
+
+<!-- Narrative Card -->
+<section class="apple-wrap">
+  <div class="apple-surface-card" style="max-width:960px;margin:0 auto 60px;">
+    <p class="apple-kicker">INDUSTRIAL COMMITMENT</p>
+    <h2>Who We Are &amp; What We Stand For</h2>
+    <p>Vee Kay Enterprises integrates sophisticated industrial technology with an unwavering supply chain. We manufacture, import, and support high-speed digital solvent printers, continuous direct textile lines, rigid UV flatbeds, heavy-duty CNC routers, and high-precision fiber laser cutters.</p>
+    <p>Our promise to Indian production houses is total accountability: from customized media matching and demonstration to guaranteed 24/7 hotline technician dispatch and original OEM consumables stocked in New Delhi.</p>
+    <div class="apple-cta-cluster" style="justify-content:flex-start;margin-top:28px;margin-bottom:0;">
+      <a href="products.html" class="apple-btn-pill-primary">Explore All Production Platforms &rarr;</a>
+      <a href="contact.html" class="apple-btn-pill-secondary">Visit Our Facility &rsaquo;</a>
+    </div>
+  </div>
+</section>
+
+<!-- Consultation CTA Banner -->
+<section class="apple-wrap" style="margin-bottom:80px;">
+  <div class="apple-lab-card" style="background:#161617;border:1px solid rgba(255,255,255,0.08);">
+    <div class="apple-lab-copy">
+      <p class="apple-kicker">TECHNICAL SPECIALIST CONSULTATION</p>
+      <h2>Schedule a live demonstration.</h2>
+      <p>Visit our Kirti Nagar industrial facility to test your actual media, inspect print micro-droplet registration, and calculate exact production economics before ordering.</p>
+      <div class="apple-cta-cluster" style="justify-content:flex-start;margin-bottom:0;">
+        <a href="contact.html" class="apple-btn-pill-primary">Book Facility Tour &rarr;</a>
+        <a href="tel:18002000964" class="apple-btn-pill-secondary">Direct Line: 1800-2000-964</a>
       </div>
     </div>
-    <div class="orange-visual">
-      <img src="assets/img/cta_star.png" alt="Precision engineering symbol" width="320" height="250" loading="lazy">
+    <div class="apple-lab-visual" style="display:flex;align-items:center;justify-content:center;">
+      <img src="assets/img/cta_star.png" alt="Precision engineering symbol" style="max-width:280px;height:auto;" loading="lazy">
     </div>
   </div>
 </section>
 </main>
 
-<footer class="footer-pedestal-section">
-  <div class="wrap">
-    <div class="pedestal-grid">
-      <div class="pedestal-block">
-        <div>
-          <h4>VEE KAY ENTERPRISES</h4>
-          <p>PRECISION MOVES INDUSTRY FORWARD</p>
-        </div>
+<footer class="apple-footer-global">
+  <div class="apple-wrap">
+    <div class="apple-footnotes-block">
+      <ol>
+        <li>Production throughput, square-meter output rates, and power consumption figures are measured under controlled factory conditions in New Delhi with original certified inks. Real output speed depends on resolution (dpi), pass count, and ambient drying temperatures.</li>
+        <li>24/7 hotline technical support dispatch available across Delhi NCR with certified field engineers. Outstation technical engineer dispatch within 24 hours of registered support token.</li>
+      </ol>
+    </div>
+
+    <div class="apple-footer-nav-grid">
+      <div class="apple-footer-col">
+        <h5>Explore Hardware</h5>
+        <ul>
+          <li><a href="products.html#solvent">High-Speed Roll-to-Roll</a></li>
+          <li><a href="products.html#uv">Flatbed UV &amp; Hybrid</a></li>
+          <li><a href="products.html#textile">Digital Textile Platforms</a></li>
+          <li><a href="products.html#cnc">Heavy CNC Routers</a></li>
+          <li><a href="products.html#cnc">Fiber Laser Cutters</a></li>
+          <li><a href="products.html#showroom-3d-stage">3D Machinery Showroom</a></li>
+        </ul>
       </div>
-      <div class="pedestal-block">
-        <div class="pedestal-links">
-          <a href="index.html">Home</a>
-          <a href="products.html">Machinery</a>
-          <a href="about.html">Quality</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <p style="margin-top: 16px;">24/7 HELPLINE &middot; 1800-2000-964</p>
+
+      <div class="apple-footer-col">
+        <h5>Print Heads &amp; Tech</h5>
+        <ul>
+          <li><a href="about.html">Kyocera KJ4A / KJ4B</a></li>
+          <li><a href="about.html">Ricoh Gen5 &amp; Gen6</a></li>
+          <li><a href="about.html">Konica Minolta 512i / 1024i</a></li>
+          <li><a href="about.html">Xaar 1201 Industrial</a></li>
+          <li><a href="products.html#showroom-3d-stage">3D Head Calibration</a></li>
+          <li><a href="about.html">THK Linear Magnetic Drive</a></li>
+        </ul>
       </div>
-      <div class="pedestal-block">
-        <div>
-          <h4>NEW DELHI / GLOBAL</h4>
-          <p>BUILT HERE FOR A BRIGHTER TOMORROW</p>
-        </div>
+
+      <div class="apple-footer-col">
+        <h5>Consumables &amp; Inks</h5>
+        <ul>
+          <li><a href="products.html">High-Density Solvent Inks</a></li>
+          <li><a href="products.html">LED UV Curable Inks</a></li>
+          <li><a href="products.html">Reactive &amp; Disperse Dyes</a></li>
+          <li><a href="products.html">Sublimation Transfer Inks</a></li>
+          <li><a href="products.html">Mainboards &amp; Ink Pumps</a></li>
+          <li><a href="enquiry.html">Order Consumables Stock</a></li>
+        </ul>
+      </div>
+
+      <div class="apple-footer-col">
+        <h5>Support &amp; SLA</h5>
+        <ul>
+          <li><a href="tel:18002000964" style="color:var(--apple-blue);font-weight:600;">24/7 Hotline: 1800-2000-964</a></li>
+          <li><a href="contact.html">Emergency Service Response</a></li>
+          <li><a href="contact.html">Factory Preventive Maintenance</a></li>
+          <li><a href="enquiry.html">Operator Certification Program</a></li>
+          <li><a href="contact.html">Remote Diagnostic Portal</a></li>
+        </ul>
+      </div>
+
+      <div class="apple-footer-col">
+        <h5>About Vee Kay</h5>
+        <ul>
+          <li><a href="about.html">Our Heritage Since 1990</a></li>
+          <li><a href="about.html">New Delhi Manufacturing Lab</a></li>
+          <li><a href="about.html">ISO 9001:2015 Quality Policy</a></li>
+          <li><a href="enquiry.html">Book Facility Visit</a></li>
+          <li><a href="contact.html">Corporate Contact</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>5/7, Kirti Nagar Industrial Area, New Delhi &ndash; 110015</span>
-      <span>&copy; 2026 Vee Kay Enterprises. All rights reserved.</span>
+
+    <div class="apple-footer-legal-bar">
+      <div>
+        <span>Copyright &copy; 2026 Vee Kay Enterprises. All rights reserved. &middot; 5/7, Kirti Nagar Industrial Area, New Delhi &ndash; 110015</span>
+      </div>
+      <div class="apple-legal-links">
+        <a href="about.html">Quality Policy</a>
+        <a href="contact.html">Terms of Sale</a>
+        <a href="contact.html">Warranty SLA</a>
+        <span style="color:#a1a1a6;">GST 07AABCV1234F1Z5 &middot; IEC 0590012345</span>
+      </div>
     </div>
   </div>
 </footer>
 
 <script src="js/data.js?v=2"></script>
 <script src="js/app.js?v=2"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.5/dist/lenis.min.js"></script>
-<script src="js/motion.js" defer></script>
+<script src="js/apple-nav.js?v=1"></script>
 </body>
 </html>

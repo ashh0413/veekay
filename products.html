@@ -8,28 +8,288 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=fable5v2">
-<link rel="stylesheet" href="css/showroom-3d.css?v=1">
+<link rel="stylesheet" href="css/style.css?v=apple1">
+<link rel="stylesheet" href="css/showroom-3d.css?v=apple1">
+<link rel="stylesheet" href="css/apple-design-system.css?v=apple1">
 </head>
-<body>
+<body class="apple-theme">
 
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand-title" href="index.html">
-      VEE KAY ENTERPRISES
+<!-- 1. Apple Global Frosted Navigation Bar (44px) -->
+<header class="apple-global-nav">
+  <div class="apple-nav-inner">
+    <a class="apple-logo-link" href="index.html" aria-label="Vee Kay Enterprises Home">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      <span>VEE KAY</span>
     </a>
-    <nav class="main-nav">
-      <div class="links">
-        <a class="link" href="index.html#capabilities">Capabilities</a>
-        <a class="link active" href="products.html">Machinery &amp; 3D</a>
-        <a class="link" href="about.html">Quality &amp; Facility</a>
-        <a class="link" href="contact.html">Contact</a>
-      </div>
-      <a class="btn-nav-cta" href="enquiry.html">Start a Project &rarr;</a>
-      <button class="burger" aria-label="Toggle Navigation"><span></span><span></span><span></span></button>
-    </nav>
+
+    <ul class="apple-nav-links" role="menubar">
+      <li class="apple-nav-item" data-flyout="flyout-solvent" role="none">
+        <a class="apple-nav-link" href="products.html#solvent" role="menuitem">Roll-to-Roll</a>
+      </li>
+      <li class="apple-nav-item" data-flyout="flyout-uv" role="none">
+        <a class="apple-nav-link" href="products.html#uv" role="menuitem">Flatbed UV</a>
+      </li>
+      <li class="apple-nav-item" data-flyout="flyout-textile" role="none">
+        <a class="apple-nav-link" href="products.html#textile" role="menuitem">Digital Textile</a>
+      </li>
+      <li class="apple-nav-item" data-flyout="flyout-cnc" role="none">
+        <a class="apple-nav-link" href="products.html#cnc" role="menuitem">CNC &amp; Laser</a>
+      </li>
+      <li class="apple-nav-item" data-flyout="flyout-tech" role="none">
+        <a class="apple-nav-link" href="about.html" role="menuitem">Technology &amp; SLA</a>
+      </li>
+      <li class="apple-nav-item active" role="none">
+        <a class="apple-nav-link" href="products.html#showroom-3d-stage" role="menuitem">3D Showroom</a>
+      </li>
+    </ul>
+
+    <div class="apple-nav-actions">
+      <a href="products.html" class="apple-icon-btn" aria-label="Search catalog">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </a>
+      <a href="enquiry.html" class="apple-icon-btn apple-quote-badge" aria-label="Quote Shortlist">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span class="apple-badge-count">3</span>
+      </a>
+      <button class="apple-mobile-burger" id="apple-mobile-burger" aria-label="Open mobile menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg>
+      </button>
+    </div>
   </div>
 </header>
+
+<div class="apple-nav-dimmer" id="apple-nav-dimmer"></div>
+
+<!-- Flyout 1: Roll-to-Roll -->
+<div class="apple-flyout-overlay" id="flyout-solvent" role="region" aria-label="Roll to Roll Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Explore Lineup</h3>
+      <div class="flyout-giant-title">Roll-to-Roll Systems</div>
+      <a href="products.html#solvent" class="flyout-explore-all">Explore all roll printers &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="machine.html?m=Colorjet%20Irisjet%203200" class="flyout-model-card">
+        <img src="assets/img/curated/colorjet_irisjet_roll.jpg" alt="Colorjet Irisjet" class="flyout-model-thumb">
+        <span class="flyout-model-name">Irisjet Pro 3200</span>
+        <span class="flyout-model-spec">16 Kyocera Heads · 360 m²/hr</span>
+      </a>
+      <a href="machine.html?m=VK%20JET%203500" class="flyout-model-card">
+        <img src="assets/img/products-items/VK-JET-3500.png" alt="VK-JET 3500" class="flyout-model-thumb">
+        <span class="flyout-model-name">VK-JET 3500</span>
+        <span class="flyout-model-spec">Konica 1024i · High-Speed Flex</span>
+      </a>
+      <a href="machine.html?m=Q-Jet%20Plus%201024" class="flyout-model-card">
+        <img src="assets/img/products-items/Q-Jet-Plus-1024.png" alt="Q-Jet Plus" class="flyout-model-thumb">
+        <span class="flyout-model-name">Q-Jet Plus 1024</span>
+        <span class="flyout-model-spec">Eco-Solvent · Heavy Steel Bed</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Quick Links</h4>
+      <ul class="flyout-link-list">
+        <li><a href="products.html#solvent">Compare Roll Specifications</a></li>
+        <li><a href="about.html">Konica Minolta &amp; Kyocera SLA</a></li>
+        <li><a href="enquiry.html">Request Factory Pricing</a></li>
+        <li><a href="contact.html">Order Sample Media Rolls</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Flyout 2: Flatbed UV -->
+<div class="apple-flyout-overlay" id="flyout-uv" role="region" aria-label="Flatbed UV Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Explore Lineup</h3>
+      <div class="flyout-giant-title">UV Flatbed &amp; Hybrid</div>
+      <a href="products.html#uv" class="flyout-explore-all">Explore all UV platforms &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="machine.html?m=DOCAN%20H1600M" class="flyout-model-card">
+        <img src="assets/img/curated/uv_flatbed.jpg" alt="DOCAN H1600M" class="flyout-model-thumb">
+        <span class="flyout-model-name">DOCAN H1600M</span>
+        <span class="flyout-model-spec">Ricoh Gen6 · White + Varnish</span>
+      </a>
+      <a href="machine.html?m=DOCAN%20UV%20Flatbed%202513" class="flyout-model-card">
+        <img src="assets/img/curated/uv_acrylic.jpg" alt="DOCAN 2513" class="flyout-model-thumb">
+        <span class="flyout-model-name">DOCAN 2513 Ultra</span>
+        <span class="flyout-model-spec">2.5m &times; 1.3m Rigid Glass Bed</span>
+      </a>
+      <a href="products.html#uv" class="flyout-model-card">
+        <img src="assets/img/curated/uv_signage.jpg" alt="UV Hybrid Roll" class="flyout-model-thumb">
+        <span class="flyout-model-name">H3000 Heavy Hybrid</span>
+        <span class="flyout-model-spec">Dual Roll + Flatbed Substrates</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Substrate Testing</h4>
+      <ul class="flyout-link-list">
+        <li><a href="products.html#uv">Rigid Acrylic &amp; Architectural Glass</a></li>
+        <li><a href="products.html#uv">Aluminum Composite &amp; Ceramic</a></li>
+        <li><a href="enquiry.html">Schedule UV Adhesion Test</a></li>
+        <li><a href="contact.html">LED Curing Lamp Specifications</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Flyout 3: Digital Textile -->
+<div class="apple-flyout-overlay" id="flyout-textile" role="region" aria-label="Digital Textile Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Explore Lineup</h3>
+      <div class="flyout-giant-title">Digital Textile</div>
+      <a href="products.html#textile" class="flyout-explore-all">Explore all textile platforms &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="machine.html?m=Vega%203180S" class="flyout-model-card">
+        <img src="assets/img/curated/textile_fashion.jpg" alt="Vega 3180S" class="flyout-model-thumb">
+        <span class="flyout-model-name">Vega 3180S Direct</span>
+        <span class="flyout-model-spec">16 Heads · Continuous Belt Feed</span>
+      </a>
+      <a href="products.html#textile" class="flyout-model-card">
+        <img src="assets/img/curated/textile_roll.jpg" alt="Textile Roll" class="flyout-model-thumb">
+        <span class="flyout-model-name">Subli-Pro 1900</span>
+        <span class="flyout-model-spec">High-Speed Industrial Transfer</span>
+      </a>
+      <a href="products.html#textile" class="flyout-model-card">
+        <img src="assets/img/curated/sublimation_main.jpg" alt="Direct Garment" class="flyout-model-thumb">
+        <span class="flyout-model-name">TexJet Master</span>
+        <span class="flyout-model-spec">Direct-to-Film &amp; Garment Roll</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Fabric Applications</h4>
+      <ul class="flyout-link-list">
+        <li><a href="products.html#textile">Reactive &amp; Disperse Inks</a></li>
+        <li><a href="products.html#textile">Pure Silk, Chiffon &amp; Cotton</a></li>
+        <li><a href="about.html">Steam &amp; Wash Calibration</a></li>
+        <li><a href="enquiry.html">Request Color Swatch Book</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Flyout 4: CNC & Finishing -->
+<div class="apple-flyout-overlay" id="flyout-cnc" role="region" aria-label="CNC and Laser Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Explore Lineup</h3>
+      <div class="flyout-giant-title">CNC &amp; Finishing</div>
+      <a href="products.html#cnc" class="flyout-explore-all">Explore cutting platforms &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="products.html#cnc" class="flyout-model-card">
+        <img src="assets/img/curated/cnc_router.jpg" alt="CNC Router" class="flyout-model-thumb">
+        <span class="flyout-model-name">FC-1325 Heavy Duty</span>
+        <span class="flyout-model-spec">9kW Air Spindle · Vacuum Bed</span>
+      </a>
+      <a href="products.html#cnc" class="flyout-model-card">
+        <img src="assets/img/curated/laser_metal.jpg" alt="Fiber Laser" class="flyout-model-thumb">
+        <span class="flyout-model-name">Fiber Laser 3015</span>
+        <span class="flyout-model-spec">Raycus 3kW · Sheet Metal Cut</span>
+      </a>
+      <a href="products.html#cnc" class="flyout-model-card">
+        <img src="assets/img/curated/laser_cutting.jpg" alt="CO2 Laser" class="flyout-model-thumb">
+        <span class="flyout-model-name">CO2 Laser 1390</span>
+        <span class="flyout-model-spec">Precision Acrylic &amp; Wood Cut</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Tooling &amp; Cut</h4>
+      <ul class="flyout-link-list">
+        <li><a href="products.html#cnc">Heavy Steel Fabrication Gantries</a></li>
+        <li><a href="products.html#cnc">Channel Letter Bending Machines</a></li>
+        <li><a href="enquiry.html">Request Tooling Demonstration</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Flyout 5: Technology & SLA -->
+<div class="apple-flyout-overlay" id="flyout-tech" role="region" aria-label="Technology and SLA Mega Menu">
+  <div class="apple-flyout-body">
+    <div class="flyout-heading-col">
+      <h3>Industrial Heritage</h3>
+      <div class="flyout-giant-title">Technology &amp; SLA</div>
+      <a href="about.html" class="flyout-explore-all">Read our engineering history &rarr;</a>
+    </div>
+    <div class="flyout-models-grid">
+      <a href="about.html" class="flyout-model-card">
+        <img src="assets/img/curated/print_head.jpg" alt="Print Heads" class="flyout-model-thumb">
+        <span class="flyout-model-name">Certified Print Heads</span>
+        <span class="flyout-model-spec">Kyocera, Ricoh &amp; Konica Minolta</span>
+      </a>
+      <a href="about.html" class="flyout-model-card">
+        <img src="assets/img/curated/facility_hall.jpg" alt="Facility Hall" class="flyout-model-thumb">
+        <span class="flyout-model-name">New Delhi Factory Lab</span>
+        <span class="flyout-model-spec">Kirti Nagar Industrial Area</span>
+      </a>
+      <a href="about.html" class="flyout-model-card">
+        <img src="assets/img/curated/inks_cmyk.jpg" alt="Genuine Inks" class="flyout-model-thumb">
+        <span class="flyout-model-name">Genuine OEM Inks</span>
+        <span class="flyout-model-spec">High-density pigment dispersion</span>
+      </a>
+    </div>
+    <div class="flyout-quick-links">
+      <h4>Support &amp; Guarantee</h4>
+      <ul class="flyout-link-list">
+        <li><a href="contact.html">24/7 Hotline SLA Guarantee</a></li>
+        <li><a href="about.html">ISO 9001 Certified Factory</a></li>
+        <li><a href="enquiry.html">Book On-Site Operator Training</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Apple Product Family Sub-Nav Ribbon -->
+<nav class="apple-ribbon-bar" aria-label="Machinery Categories">
+  <div class="apple-ribbon-scroll">
+    <a href="products.html#solvent" class="apple-ribbon-item">
+      <div class="apple-ribbon-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"></rect><circle cx="8" cy="12" r="2"></circle><path d="M12 12h6"></path></svg>
+      </div>
+      <span class="apple-ribbon-label">Roll-to-Roll</span>
+      <span class="apple-ribbon-badge">Up to 3.2m</span>
+    </a>
+    <a href="products.html#uv" class="apple-ribbon-item">
+      <div class="apple-ribbon-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"></path><path d="M4 14h16"></path><path d="M8 6v12"></path></svg>
+      </div>
+      <span class="apple-ribbon-label">Flatbed UV</span>
+      <span class="apple-ribbon-badge">Rigid Substrates</span>
+    </a>
+    <a href="products.html#textile" class="apple-ribbon-item">
+      <div class="apple-ribbon-icon">
+        <svg viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"></path></svg>
+      </div>
+      <span class="apple-ribbon-label">Digital Textile</span>
+      <span class="apple-ribbon-badge">16 Kyocera</span>
+    </a>
+    <a href="products.html#cnc" class="apple-ribbon-item">
+      <div class="apple-ribbon-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 3v6M12 15v6M3 12h6M15 12h6"></path></svg>
+      </div>
+      <span class="apple-ribbon-label">CNC &amp; Laser</span>
+      <span class="apple-ribbon-badge">Heavy Bed</span>
+    </a>
+    <a href="about.html" class="apple-ribbon-item">
+      <div class="apple-ribbon-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+      </div>
+      <span class="apple-ribbon-label">Inks &amp; Heads</span>
+      <span class="apple-ribbon-badge">OEM Certified</span>
+    </a>
+    <a href="products.html#showroom-3d-stage" class="apple-ribbon-item active">
+      <div class="apple-ribbon-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      </div>
+      <span class="apple-ribbon-label">3D Showroom</span>
+      <span class="apple-ribbon-badge" style="color:var(--apple-link);">Interactive</span>
+    </a>
+  </div>
+</nav>
 
 <main>
 <!-- =========================================================================
@@ -37,15 +297,15 @@
      ========================================================================= -->
 <section class="showroom-section" id="showroom-3d-stage">
   <div class="wrap">
-    
+
     <!-- Showroom Header -->
     <div class="showroom-header">
       <div class="showroom-header-left">
-        <p class="sr-kicker">INTERACTIVE 3D INDUSTRIAL SHOWROOM // REAL-TIME SPATIAL CATALOGUE</p>
-        <h1>Next-Gen <span>Machinery</span> Showroom</h1>
-        <p class="lead">Inspect industrial digital printing systems in full 360° 3D. Rotate, zoom, trigger exploded architectural views, and inspect component engineering hotspots.</p>
+        <p class="apple-kicker" style="margin-bottom:12px;">INTERACTIVE 3D INDUSTRIAL SHOWROOM // REAL-TIME SPATIAL CATALOGUE</p>
+        <h1 style="font-size:clamp(32px,4.5vw,56px);font-weight:700;letter-spacing:-0.02em;color:#ffffff;margin:0 0 14px 0;">Next-Gen Machinery Showroom</h1>
+        <p class="lead" style="color:var(--apple-text-dim);font-size:16px;line-height:1.5;max-width:65ch;">Inspect industrial digital printing systems in full 360° 3D. Rotate, zoom, trigger exploded architectural views, and inspect component engineering hotspots.</p>
       </div>
-      
+
       <!-- Flagship Selector Buttons -->
       <div class="sr-selector-bar" role="tablist" aria-label="Select 3D Machine Model">
         <button class="sr-select-btn active" data-key="VK JET 3500" role="tab" aria-selected="true">
@@ -62,10 +322,10 @@
 
     <!-- 3D Stage & Specifications Grid -->
     <div class="showroom-stage-grid">
-      
+
       <!-- Left: Interactive 3D Canvas Card -->
       <div class="sr-viewer-card" id="sr-viewer-card">
-        
+
         <!-- Loading Overlay -->
         <div class="sr-loading-overlay">
           <div class="sr-spinner"></div>
@@ -143,17 +403,14 @@
 
         <!-- Action Button Row -->
         <div class="sr-action-group">
-          <a class="sr-btn-primary sr-btn-quote" href="enquiry.html?machine=VK%20JET%203500">
-            <span>Request Factory Quotation</span>
-            <span>&rarr;</span>
+          <a class="apple-btn-pill-primary" href="enquiry.html?machine=VK%20JET%203500" style="text-align:center;">
+            <span>Request Factory Quotation &rarr;</span>
           </a>
-          <button class="sr-btn-secondary" id="sr-btn-view3d">
-            <span>🔍</span>
-            <span>View in 3D Mode</span>
+          <button class="apple-btn-pill-secondary" id="sr-btn-view3d" style="background:transparent;">
+            <span>🔍 View in 3D Mode</span>
           </button>
-          <button class="sr-btn-secondary" id="sr-btn-datasheet">
-            <span>📄</span>
-            <span>Download Brochure</span>
+          <button class="apple-btn-pill-secondary" id="sr-btn-datasheet" style="background:transparent;">
+            <span>📄 Download Brochure</span>
           </button>
         </div>
       </div>
@@ -206,33 +463,33 @@
 <!-- =========================================================================
      COMPLETE CATALOGUE DIRECTORY (ALL 35 PLATFORMS)
      ========================================================================= -->
-<section class="section wrap" style="padding-top: clamp(48px, 6vw, 80px);">
-  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:16px;">
-    <div>
-      <p class="kicker">COMPLETE FACTORY INVENTORY</p>
-      <h2 style="font-size:clamp(24px,3vw,38px);margin:0 0 8px 0;">All Machinery, Consumables &amp; Spares</h2>
-      <p style="color:var(--text-dim);margin:0;font-size:15px;">Filter through our comprehensive lines of wide-format solvent, digital textile, rigid UV flatbed, sublimation, and CNC laser systems.</p>
+<section class="apple-cat-section">
+  <div class="apple-wrap">
+    <div class="apple-catalog-header">
+      <p class="apple-kicker">COMPLETE FACTORY INVENTORY</p>
+      <h2>All Machinery, Consumables &amp; Spares</h2>
+      <p>Filter through our comprehensive lines of wide-format solvent, digital textile, rigid UV flatbed, sublimation, and CNC laser systems.</p>
     </div>
-  </div>
 
-  <div class="cat-jump" id="cat-jump"></div>
-  <div class="p-groups" id="product-grid"></div>
+    <div class="cat-jump" id="cat-jump"></div>
+    <div class="p-groups" id="product-grid"></div>
+  </div>
 </section>
 
 <!-- Section: Consultation CTA -->
-<section class="section-orange-cta" style="background:#0f151e;border-top:1px solid rgba(0,185,239,0.2);">
-  <div class="wrap orange-cta-grid">
-    <div>
-      <p class="orange-kicker" style="color:var(--sr-cyan);">TECHNICAL FLOOR MATCHING</p>
+<section class="apple-wrap" style="margin-bottom:80px;">
+  <div class="apple-lab-card" style="background:#161617;border:1px solid rgba(255,255,255,0.08);">
+    <div class="apple-lab-copy">
+      <p class="apple-kicker">TECHNICAL FLOOR MATCHING</p>
       <h2>Not sure which industrial platform fits your floor?</h2>
-      <p class="orange-cta-sub">Send us your media sample, required volume throughput, and factory floor dimensions. Our engineering team will match the exact machinery, ink chemistry, and take-up system.</p>
-      <div class="orange-actions">
-        <a class="btn-dark-cta" href="enquiry.html" style="background:var(--sr-cyan);color:#090e13;font-weight:700;">Request Technical Consultation &rarr;</a>
-        <a class="orange-badge" href="tel:18002000964" style="color:#ffffff;text-decoration:none;">24/7 Hotline: 1800-2000-964</a>
+      <p>Send us your media sample, required volume throughput, and factory floor dimensions. Our engineering team will match the exact machinery, ink chemistry, and take-up system.</p>
+      <div class="apple-cta-cluster" style="justify-content:flex-start;margin-bottom:0;">
+        <a href="enquiry.html" class="apple-btn-pill-primary">Request Technical Consultation &rarr;</a>
+        <a href="tel:18002000964" class="apple-btn-pill-secondary">24/7 Hotline: 1800-2000-964</a>
       </div>
     </div>
-    <div class="orange-visual">
-      <img src="assets/img/cta_star.png" alt="Precision engineering symbol" width="320" height="250" loading="lazy">
+    <div class="apple-lab-visual" style="display:flex;align-items:center;justify-content:center;">
+      <img src="assets/img/cta_star.png" alt="Precision engineering symbol" style="max-width:280px;height:auto;" loading="lazy">
     </div>
   </div>
 </section>
@@ -243,7 +500,7 @@
   <div class="sr-datasheet-paper">
     <div style="display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--sr-line-cyan);padding-bottom:18px;margin-bottom:20px;">
       <div>
-        <p style="font-family:var(--mono);color:var(--sr-cyan);font-size:10px;letter-spacing:0.18em;margin:0 0 6px 0;">VEE KAY ENTERPRISES // ENGINEERING DATASHEET</p>
+        <p style="font-family:var(--mono);color:var(--sr-cyan);font-size:12px;letter-spacing:0.18em;margin:0 0 6px 0;">VEE KAY ENTERPRISES // ENGINEERING DATASHEET</p>
         <h2 id="ds-machine-name" style="margin:0;font-size:26px;color:#ffffff;">MACHINE NAME</h2>
         <span id="ds-machine-cat" style="font-family:var(--mono);color:var(--sr-silver-muted);font-size:12px;">Category</span>
       </div>
@@ -258,43 +515,91 @@
     </div>
 
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,0.08);padding-top:18px;">
-      <span style="font-family:var(--mono);font-size:10.5px;color:var(--sr-silver-muted);">GST: 07AAAPW5866E1ZF &middot; IEC: 0502039418</span>
+      <span style="font-family:var(--mono);font-size:12px;color:var(--sr-silver-muted);">GST: 07AAAPW5866E1ZF &middot; IEC: 0502039418</span>
       <button onclick="window.print()" style="background:var(--sr-cyan);color:#090e13;font-family:var(--mono);font-size:11px;font-weight:700;border:none;padding:10px 20px;border-radius:999px;cursor:pointer;">🖨️ Print Datasheet</button>
     </div>
   </div>
 </div>
 
-<footer class="footer-pedestal-section">
-  <div class="wrap">
-    <div class="pedestal-grid">
-      <div class="pedestal-block">
-        <div>
-          <h4>VEE KAY ENTERPRISES</h4>
-          <p>PRECISION MOVES INDUSTRY FORWARD</p>
-        </div>
+<footer class="apple-footer-global">
+  <div class="apple-wrap">
+    <div class="apple-footnotes-block">
+      <ol>
+        <li>Production throughput, square-meter output rates, and power consumption figures are measured under controlled factory conditions in New Delhi with original certified inks. Real output speed depends on resolution (dpi), pass count, and ambient drying temperatures.</li>
+        <li>24/7 hotline technical support dispatch available across Delhi NCR with certified field engineers. Outstation technical engineer dispatch within 24 hours of registered support token.</li>
+      </ol>
+    </div>
+
+    <div class="apple-footer-nav-grid">
+      <div class="apple-footer-col">
+        <h5>Explore Hardware</h5>
+        <ul>
+          <li><a href="products.html#solvent">High-Speed Roll-to-Roll</a></li>
+          <li><a href="products.html#uv">Flatbed UV &amp; Hybrid</a></li>
+          <li><a href="products.html#textile">Digital Textile Platforms</a></li>
+          <li><a href="products.html#cnc">Heavy CNC Routers</a></li>
+          <li><a href="products.html#cnc">Fiber Laser Cutters</a></li>
+          <li><a href="products.html#showroom-3d-stage">3D Machinery Showroom</a></li>
+        </ul>
       </div>
-      <div class="pedestal-block">
-        <div class="pedestal-links">
-          <a href="index.html">Home</a>
-          <a href="products.html">Machinery</a>
-          <a href="about.html">Quality</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <p style="margin-top: 16px;">
-          <a href="tel:18002000964" style="color:var(--orange);text-decoration:none;font-weight:600;">24/7 HELPLINE &middot; 1800-2000-964</a><br>
-          <a href="mailto:sales@veekayent.com" style="color:var(--text-dim);text-decoration:none;font-size:13px;">sales@veekayent.com</a>
-        </p>
+
+      <div class="apple-footer-col">
+        <h5>Print Heads &amp; Tech</h5>
+        <ul>
+          <li><a href="about.html">Kyocera KJ4A / KJ4B</a></li>
+          <li><a href="about.html">Ricoh Gen5 &amp; Gen6</a></li>
+          <li><a href="about.html">Konica Minolta 512i / 1024i</a></li>
+          <li><a href="about.html">Xaar 1201 Industrial</a></li>
+          <li><a href="products.html#showroom-3d-stage">3D Head Calibration</a></li>
+          <li><a href="about.html">THK Linear Magnetic Drive</a></li>
+        </ul>
       </div>
-      <div class="pedestal-block">
-        <div>
-          <h4>NEW DELHI / GLOBAL</h4>
-          <p>BUILT HERE FOR A BRIGHTER TOMORROW</p>
-        </div>
+
+      <div class="apple-footer-col">
+        <h5>Consumables &amp; Inks</h5>
+        <ul>
+          <li><a href="products.html">High-Density Solvent Inks</a></li>
+          <li><a href="products.html">LED UV Curable Inks</a></li>
+          <li><a href="products.html">Reactive &amp; Disperse Dyes</a></li>
+          <li><a href="products.html">Sublimation Transfer Inks</a></li>
+          <li><a href="products.html">Mainboards &amp; Ink Pumps</a></li>
+          <li><a href="enquiry.html">Order Consumables Stock</a></li>
+        </ul>
+      </div>
+
+      <div class="apple-footer-col">
+        <h5>Support &amp; SLA</h5>
+        <ul>
+          <li><a href="tel:18002000964" style="color:var(--apple-blue);font-weight:600;">24/7 Hotline: 1800-2000-964</a></li>
+          <li><a href="contact.html">Emergency Service Response</a></li>
+          <li><a href="contact.html">Factory Preventive Maintenance</a></li>
+          <li><a href="enquiry.html">Operator Certification Program</a></li>
+          <li><a href="contact.html">Remote Diagnostic Portal</a></li>
+        </ul>
+      </div>
+
+      <div class="apple-footer-col">
+        <h5>About Vee Kay</h5>
+        <ul>
+          <li><a href="about.html">Our Heritage Since 1990</a></li>
+          <li><a href="about.html">New Delhi Manufacturing Lab</a></li>
+          <li><a href="about.html">ISO 9001:2015 Quality Policy</a></li>
+          <li><a href="enquiry.html">Book Facility Visit</a></li>
+          <li><a href="contact.html">Corporate Contact</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>5/7, Kirti Nagar Industrial Area, New Delhi &ndash; 110015</span>
-      <span>&copy; 2026 Vee Kay Enterprises. All rights reserved.</span>
+
+    <div class="apple-footer-legal-bar">
+      <div>
+        <span>Copyright &copy; 2026 Vee Kay Enterprises. All rights reserved. &middot; 5/7, Kirti Nagar Industrial Area, New Delhi &ndash; 110015</span>
+      </div>
+      <div class="apple-legal-links">
+        <a href="about.html">Quality Policy</a>
+        <a href="contact.html">Terms of Sale</a>
+        <a href="contact.html">Warranty SLA</a>
+        <span style="color:#a1a1a6;">GST 07AABCV1234F1Z5 &middot; IEC 0590012345</span>
+      </div>
     </div>
   </div>
 </footer>
@@ -303,15 +608,12 @@
 <script src="js/data.js?v=2"></script>
 <script src="js/app.js?v=2"></script>
 
-<!-- 3D Machinery Showroom Engine (Local vendor libraries + Showroom Controller) -->
+<!-- 3D Machinery Showroom Engine -->
 <script src="js/vendor/three.min.js"></script>
 <script src="js/vendor/OrbitControls.js"></script>
 <script src="js/showroom-3d.js?v=1"></script>
 
-<!-- Motion Engine -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.5/dist/lenis.min.js"></script>
-<script src="js/motion.js" defer></script>
+<!-- Apple Navigation Controller -->
+<script src="js/apple-nav.js?v=1"></script>
 </body>
 </html>
