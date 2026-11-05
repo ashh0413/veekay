@@ -1636,3 +1636,254 @@ html, body.apple-theme {
     justify-content: center;
   }
 }
+
+/* ==========================================================================
+   VEE KAY APPLE DESIGN SYSTEM — LIGHT THEME EXTENSION
+   ========================================================================== */
+[data-theme="light"] {
+  --apple-black: #ffffff;
+  --apple-dark-surface: #f5f5f7;
+  --apple-light-bg: #f5f5f7;
+  --apple-nav-bg: rgba(255, 255, 255, 0.85);
+  --apple-nav-border: rgba(0, 0, 0, 0.08);
+  --apple-nav-text: rgba(0, 0, 0, 0.75);
+  --apple-nav-text-hover: #000000;
+  --apple-text-white: #1d1d1f;
+  --apple-text-dim: #6e6e73;
+  --apple-link: #0071e3;
+  --apple-blue: #0071e3;
+}
+
+[data-theme="light"] body.apple-theme {
+  background: #ffffff;
+  color: #1d1d1f;
+}
+
+[data-theme="light"] .apple-global-nav {
+  background: var(--apple-nav-bg);
+  border-bottom: 1px solid var(--apple-nav-border);
+}
+
+[data-theme="light"] .apple-logo-link {
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-logo-link svg path {
+  stroke: #1d1d1f;
+}
+
+[data-theme="light"] .apple-flyout-overlay {
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .flyout-giant-title,
+[data-theme="light"] .flyout-model-name {
+  color: #1d1d1f;
+}
+[data-theme="light"] .flyout-link-list a {
+  color: #424245;
+}
+[data-theme="light"] .flyout-quick-links {
+  border-left-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .apple-hero-flagship,
+[data-theme="light"] .apple-subpage-hero {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .apple-hero-title,
+[data-theme="light"] .apple-subpage-hero h1 {
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-hero-price {
+  color: #515154;
+}
+[data-theme="light"] .apple-hero-price strong {
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-stage-glow {
+  background: radial-gradient(ellipse at center, rgba(0, 113, 227, 0.12) 0%, transparent 68%);
+}
+
+[data-theme="light"] .apple-deepdive-section {
+  background: #f5f5f7;
+}
+[data-theme="light"] .apple-deepdive-title,
+[data-theme="light"] .apple-section-headline-group h2,
+[data-theme="light"] .apple-catalog-header h2 {
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-deepdive-sub {
+  color: #515154;
+}
+[data-theme="light"] .apple-specs-strip {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .apple-spec-item strong {
+  color: #1d1d1f;
+}
+
+[data-theme="light"] .apple-bento-section,
+[data-theme="light"] .apple-gallery-section,
+[data-theme="light"] .apple-cat-section {
+  background: #ffffff;
+}
+
+[data-theme="light"] .apple-bento-card.card-obsidian-dark {
+  background: #f5f5f7;
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-bento-card.card-obsidian-dark .apple-card-title {
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-bento-card.card-obsidian-dark .apple-card-sub,
+[data-theme="light"] .apple-bento-card.card-obsidian-dark .apple-card-eyebrow {
+  color: #515154;
+}
+[data-theme="light"] .apple-bento-card.card-studio-light {
+  background: #f5f5f7;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .apple-app-card {
+  background: #f5f5f7;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .apple-app-title {
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-app-desc {
+  color: #515154;
+}
+
+[data-theme="light"] .apple-lab-card,
+[data-theme="light"] .apple-surface-card,
+[data-theme="light"] .apple-metric-card,
+[data-theme="light"] .apple-form-card,
+[data-theme="light"] .apple-sla-card {
+  background: #f5f5f7;
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-lab-copy h2,
+[data-theme="light"] .apple-surface-card h2,
+[data-theme="light"] .apple-sla-card h3 {
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-metric-card .val {
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-contact-dl-item {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .apple-contact-dl-item dd {
+  color: #1d1d1f;
+}
+
+[data-theme="light"] .apple-form-field label {
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-form-field input,
+[data-theme="light"] .apple-form-field select,
+[data-theme="light"] .apple-form-field textarea {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.16);
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-form-field select option {
+  background: #ffffff;
+  color: #1d1d1f;
+}
+
+[data-theme="light"] .apple-machine-stage {
+  background: #ffffff;
+}
+[data-theme="light"] .apple-machine-info h1,
+[data-theme="light"] .apple-machine-blurb {
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-machine-desc {
+  color: #515154;
+}
+[data-theme="light"] .apple-machine-specs-grid {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .apple-machine-specs-grid > div {
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-machine-visual {
+  background: #f5f5f7;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .apple-footer-global {
+  background: #f5f5f7;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .apple-footer-col h5,
+[data-theme="light"] .apple-footer-col .apple-footer-title {
+  color: #1d1d1f;
+}
+[data-theme="light"] .apple-footer-col a {
+  color: #515154;
+}
+[data-theme="light"] .apple-footer-col a:hover {
+  color: #0071e3;
+}
+[data-theme="light"] .apple-ribbon-bar {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .apple-mobile-drawer {
+  background: rgba(255, 255, 255, 0.98);
+}
+[data-theme="light"] .apple-mob-link {
+  color: #1d1d1f;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Theme Toggle Button */
+.apple-theme-toggle {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--apple-nav-text);
+  transition: all 0.2s ease;
+  padding: 0;
+}
+.apple-theme-toggle:hover {
+  color: var(--apple-nav-text-hover);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+.apple-theme-toggle svg {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+[data-theme="light"] .apple-theme-toggle {
+  border-color: rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.75);
+}
+[data-theme="light"] .apple-theme-toggle:hover {
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
