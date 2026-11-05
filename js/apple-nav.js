@@ -122,11 +122,25 @@
     if (e.key === 'Escape') closeAllFlyouts();
   });
 
-  // 7. Mobile hamburger toggle
+  // 7. Mobile hamburger toggle & drawer management
   if (mobileBurger) {
+    const mobDrawer = document.getElementById('apple-mobile-drawer');
     mobileBurger.addEventListener('click', () => {
-      const mobDrawer = document.getElementById('apple-mobile-drawer');
-      if (mobDrawer) mobDrawer.classList.toggle('open');
+      if (!mobDrawer) return;
+      const isOpen = mobDrawer.classList.toggle('open');
+      mobileBurger.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
+
+    if (mobDrawer) {
+      // Close drawer when any mobile nav link is clicked
+      mobDrawer.querySelectorAll('.apple-mob-link, .apple-btn-pill-primary').forEach(link => {
+        link.addEventListener('click', () => {
+          mobDrawer.classList.remove('open');
+          mobileBurger.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+    }
   }
 })();
