@@ -228,7 +228,8 @@ body.apple-theme {
   gap: 36px;
 }
 
-.flyout-heading-col h3 {
+.flyout-heading-col h3,
+.flyout-heading-col .flyout-kicker {
   font-size: 11.5px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -293,7 +294,8 @@ body.apple-theme {
   border-left: 1px solid rgba(255, 255, 255, 0.08);
   padding-left: 24px;
 }
-.flyout-quick-links h4 {
+.flyout-quick-links h4,
+.flyout-quick-links .flyout-quick-title {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -910,7 +912,8 @@ body.apple-theme {
   margin-bottom: 36px;
 }
 
-.apple-footer-col h5 {
+.apple-footer-col h5,
+.apple-footer-col .apple-footer-title {
   font-size: 12px;
   font-weight: 600;
   color: #f5f5f7;
