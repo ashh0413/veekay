@@ -1,68 +1,238 @@
 /* VEE KAY product data — names + specs from veekayent.com / veekaydigital.in.
-   Images: only where the source site actually has a photo for that model
-   (370×190 product shots + 100×100 menu thumbs). No cross-model reuse. */
+   Curated authentic HD photography across all platforms. */
 const C = "assets/img/curated/";
 const P = "assets/img/products-items/";
 
-const PRODUCTS=[
-  // flagship — full spec sheet on own site
-  {name:"VK JET 3500",cat:"Solvent",flagship:true,blurb:"Workhorse wide-format solvent line. Banner, mesh, one-way vision, fabric.",
-   img:P + "VK-JET-3500.png",
-   spec:{Heads:"Konica 512 (42PL) · 4 or 8",Ink:"Solvent CMYK",Width:"3.2 m",Resolution:"180–720 dpi",Speed:"up to 1,300 sq ft/hr (8-head, 1-pass)",Media:"PVC · vinyl · mesh · fabric · one-way vision",RIP:"Photo Print + Ultra Print",Power:"AC 220V · 500–1800W",Footprint:"5000×750×1120 mm · 700 kg"}},
+const PRODUCTS = [
+  /* ---- Roll-to-Roll Solvent ---- */
+  {
+    name: "Colorjet Irisjet Pro",
+    cat: "Solvent",
+    flagship: true,
+    blurb: "Flagship textile & banner production. 16 Kyocera heads, 360 m²/hr continuous output.",
+    img: C + "colorjet_irisjet_roll.jpg",
+    spec: { Heads: "16 Kyocera KJ4B", Ink: "Solvent / Disperse CMYK", Width: "3.2 m", Resolution: "600×1800 dpi", Speed: "360 m²/hr (1-pass)" }
+  },
+  {
+    name: "VK JET 3500",
+    cat: "Solvent",
+    flagship: true,
+    blurb: "Workhorse industrial wide-format solvent line. High-speed flex, vinyl, and mesh.",
+    img: P + "VK-JET-3500.png",
+    spec: { Heads: "Konica 512i / 1024i", Ink: "Solvent CMYK", Width: "3.2 m", Resolution: "180–720 dpi", Speed: "1,300 sq ft/hr (8-head)" }
+  },
+  {
+    name: "Q Jet Plus 1024",
+    cat: "Solvent",
+    blurb: "Heavy-duty steel bed solvent inkjet for high-volume outdoor flex and banner production.",
+    img: P + "Q-Jet-Plus-1024.png",
+    spec: { Heads: "Konica 1024i (13pL)", Ink: "High-density Solvent", Width: "3.2 m", Speed: "950 sq ft/hr" }
+  },
+  {
+    name: "E Jet V0",
+    cat: "Solvent",
+    blurb: "Compact footprint roll-to-roll solvent series for sign shops, vehicle wraps, and vinyl.",
+    img: P + "E-Jet-V0.png",
+    spec: { Heads: "Epson i3200-E1", Ink: "Eco-Solvent", Width: "1.8 m", Speed: "450 sq ft/hr" }
+  },
+  {
+    name: "FLEX Industrial 3200",
+    cat: "Solvent",
+    blurb: "Continuous outdoor flex and billboard line with dual infrared drying tunnels.",
+    img: C + "solvent_machine_roll.jpg",
+    spec: { Heads: "Konica 512i (30pL)", Ink: "Solvent CMYK", Width: "3.2 m", Speed: "1,100 sq ft/hr" }
+  },
+  {
+    name: "Konica 512i 8-Head Pro",
+    cat: "Solvent",
+    blurb: "High-speed 8-head staggered gantry flex printer with Panasonic AC servo drives.",
+    img: C + "solvent_main.jpg",
+    spec: { Heads: "8× Konica Minolta 512i", Ink: "Solvent CMYK", Width: "3.2 m", Speed: "1,450 sq ft/hr" }
+  },
+  {
+    name: "Mimaki Roll Flex Pro",
+    cat: "Solvent",
+    blurb: "Precision eco-solvent platform for indoor photographic vinyl and backlit film.",
+    img: C + "mimaki_solvent_roll.jpg",
+    spec: { Heads: "Piezo Dual Array", Ink: "Eco-Solvent CMYK", Width: "1.9 m", Resolution: "1440 dpi" }
+  },
 
-  {name:"Q Jet Plus 1024",cat:"Solvent",blurb:"Entry-level solvent inkjet.",img:P + "Q-Jet-Plus-1024.png"},
-  {name:"E Jet V0",cat:"Solvent",blurb:"Compact solvent series.",img:P + "E-Jet-V0.png"},
-  {name:"FLEX Printer",cat:"Solvent",blurb:"Flex / banner production line.",img:C + "solvent_roll.jpg"},
-  {name:"Konica 512i 8-Head FLEX",cat:"Solvent",blurb:"Imported Konica 8-head flex printer.",img:C + "solvent_main.jpg"},
+  /* ---- Digital Textile ---- */
+  {
+    name: "Vega 3180S Direct",
+    cat: "Textile",
+    flagship: true,
+    blurb: "High-speed direct-to-fabric platform for natural silks, chiffon, cotton, and viscose.",
+    img: C + "textile_roll.jpg",
+    spec: { Heads: "16 Kyocera KJ4B", Ink: "Reactive / Acid / Disperse", Width: "1.8 m", Speed: "320 m²/hr (2-pass)" }
+  },
+  {
+    name: "Vega 3180DL Dual-Line",
+    cat: "Textile",
+    blurb: "Dual-line digital textile platform with continuous belt feed and automatic blanket washer.",
+    img: C + "textile_fashion.jpg",
+    spec: { Heads: "8× Kyocera Array", Ink: "Reactive / Disperse", Width: "1.8 m", Speed: "240 m²/hr" }
+  },
+  {
+    name: "E Jet V2 Textile",
+    cat: "Textile",
+    blurb: "Entry-level digital textile inkjet for designer apparel collections and garment sampling.",
+    img: C + "textile_main.jpg",
+    spec: { Heads: "Epson i3200-A1", Ink: "Pigment / Reactive", Width: "1.8 m", Speed: "85 m²/hr" }
+  },
+  {
+    name: "E Jet V25 Industrial",
+    cat: "Textile",
+    blurb: "Upgraded textile line with high-tension feed system for stretch fabrics and lycra.",
+    img: C + "textile_roll.jpg",
+    spec: { Heads: "4× Epson i3200", Ink: "Disperse / Reactive", Width: "1.8 m", Speed: "160 m²/hr" }
+  },
+  {
+    name: "Ts Jet V2 Apparel",
+    cat: "Textile",
+    blurb: "Second-generation high-speed direct garment and T-shirt roll platform.",
+    img: C + "textile_fashion.jpg",
+    spec: { Heads: "Ricoh Gen5", Ink: "Water-based Textile Pigment", Width: "1.6 m", Speed: "120 m²/hr" }
+  },
+  {
+    name: "T Jet Fabric Pro",
+    cat: "Textile",
+    blurb: "Continuous textile inkjet with temperature-controlled heating bed and inline fixation.",
+    img: C + "textile_main.jpg",
+    spec: { Heads: "Kyocera KJ4B", Ink: "Reactive Dyes", Width: "2.2 m", Speed: "190 m²/hr" }
+  },
+  {
+    name: "E Press Machine",
+    cat: "Textile",
+    blurb: "Industrial rotary heat transfer calendar press for roll-to-roll sublimation finishing.",
+    img: P + "E-Press-machine.png",
+    spec: { Type: "Rotary Heat Press", Drum: "420 mm Oil Heated", Width: "1.8 m", Speed: "2.5 m/min" }
+  },
+  {
+    name: "Carpet & Bed-Sheet Digital",
+    cat: "Textile",
+    blurb: "Extra-wide industrial platform engineered for heavy carpets, rugs, and bed-sheet widths.",
+    img: C + "textile_roll.jpg",
+    spec: { Heads: "32 Industrial Jetting Heads", Ink: "Acid / Reactive Dyes", Width: "3.4 m", Speed: "480 m²/hr" }
+  },
 
-  {name:"Vega 3180S",cat:"Textile",flagship:true,blurb:"High-speed digital textile printing — fashion and home textile.",img:C + "textile_roll.jpg",
-   spec:{Type:"Digital textile printer",Media:"Fabric rolls",Use:"Fashion · home textile"}},
-  {name:"Vega 3180DL",cat:"Textile",blurb:"Dual-line textile platform.",img:C + "textile_fashion.jpg",
-   detail:"Dual-line digital textile platform built for fashion and home-textile volume: two print stations on one media path, sized for garment factories and print shops that run fabric rolls through the line continuously."},
-  {name:"E Jet V2",cat:"Textile",blurb:"Entry textile inkjet.",img:C + "textile_main.jpg",
-   detail:"Entry-level digital textile inkjet for samples and short runs — the natural first step into fabric printing for T-shirt and soft-furnishing shops. Roll media, CMYK class output."},
-  {name:"E Jet V25",cat:"Textile",blurb:"Upgraded textile line.",img:C + "textile_roll.jpg",
-   detail:"The upgraded member of the E Jet textile series: higher throughput and a longer media path than the base model, aimed at shops moving from samples into small production runs."},
-  {name:"Ts Jet V2",cat:"Textile",blurb:"Textile series, second generation.",img:C + "textile_fashion.jpg",
-   detail:"Second-generation textile inkjet aimed at T-shirt and apparel output — sublimation and direct-fabric printing in one line, with quick media changes for short garment runs."},
-  {name:"T Jet",cat:"Textile",blurb:"Textile inkjet.",img:C + "textile_main.jpg",
-   detail:"General-purpose digital textile inkjet for fabric print shops: fashion, home textile and short-run apparel media, with the standard Vee Kay installation and spares support."},
-  {name:"P Jet",cat:"Textile",blurb:"Press-grade textile line.",img:C + "textile_roll.jpg",
-   detail:"Press-grade textile line for higher-quality fabric output — a step above the entry E Jet range, built for shops where finish and colour consistency matter on every run."},
-  {name:"E Press",cat:"Textile",blurb:"Digital press option.",img:P + "E-Press-machine.png",
-   detail:"Digital press option for garment and home-textile work — entry configuration of the Vee Kay press range, matched to smaller floors and starter volumes."},
-  {name:"P Press",cat:"Textile",blurb:"Digital press option.",img:C + "textile_fashion.jpg",
-   detail:"Press-grade configuration of the digital press range — press-grade fabric handling and output quality for established print shops."},
-  {name:"V Press",cat:"Textile",blurb:"Digital press option.",img:C + "textile_roll.jpg",
-   detail:"High-capacity digital press configuration of the Vee Kay press range — the top of the line for factories running sustained textile volumes."},
-  {name:"Iris 2200",cat:"Textile",blurb:"Textile series.",img:C + "textile_main.jpg",
-   detail:"Textile series for fashion and soft-furnishing printing: a compact footprint that fits smaller floors while keeping the full textile media set."},
-  {name:"Carpet / Bed-Sheet Digital",cat:"Textile",blurb:"High-speed carpet and bed-sheet printing.",img:C + "textile_roll.jpg",
-   detail:"High-speed digital line for carpet, rugs and bed-sheet printing — extra-wide media paths for full bed and rug widths, built for continuous wide-fabric runs."},
+  /* ---- Flatbed UV & Hybrid ---- */
+  {
+    name: "DOCAN H1600M UV Flatbed",
+    cat: "UV",
+    flagship: true,
+    blurb: "High-speed UV hybrid platform. Direct printing on rigid acrylic, architectural glass, wood slabs.",
+    img: C + "uv_flatbed.jpg",
+    spec: { Heads: "Ricoh Gen6 (5-15pL)", Ink: "LED UV Curable (CMYK+W+V)", Bed: "1.6m × 1.0m", Speed: "48 m²/hr" }
+  },
+  {
+    name: "DOCAN UV Flatbed 2513 Ultra",
+    cat: "UV",
+    blurb: "Heavy 8×4 rigid bed UV printer for architectural glass, ACP, MDF, and stone tiles.",
+    img: C + "uv_acrylic.jpg",
+    spec: { Heads: "Kyocera KJ4A / Ricoh Gen6", Ink: "LED UV (CMYK+White+Varnish)", Bed: "2.5m × 1.3m", Speed: "65 m²/hr" }
+  },
+  {
+    name: "DOCAN H3000M Heavy Hybrid",
+    cat: "UV",
+    blurb: "Large-format hybrid platform with front/rear extension tables for rigid sheets and flexible rolls.",
+    img: C + "uv_signage.jpg",
+    spec: { Heads: "Ricoh Gen6 Array", Ink: "Flexible / Rigid UV", Width: "3.2 m", Speed: "85 m²/hr" }
+  },
+  {
+    name: "M Jet Industrial UV",
+    cat: "UV",
+    blurb: "In-house industrial UV flatbed for commercial signage, luxury packaging, and backlit displays.",
+    img: C + "uv_flatbed.jpg",
+    spec: { Heads: "Ricoh Gen5", Ink: "UV Curable CMYK+W", Bed: "2.5m × 1.3m", Speed: "42 m²/hr" }
+  },
+  {
+    name: "6090 UV Desktop Flatbed",
+    cat: "UV",
+    blurb: "Precision desktop UV flatbed for personalized phone cases, acrylic trophies, and leather items.",
+    img: C + "uv_acrylic.jpg",
+    spec: { Heads: "3× Epson i3200-U1", Ink: "LED UV (CMYK+W+V)", Bed: "600×900 mm", Height: "Up to 150 mm" }
+  },
+  {
+    name: "UV DTF Transfer System",
+    cat: "UV",
+    blurb: "Direct-to-film crystal sticker system with automatic inline lamination for irregular curved surfaces.",
+    img: C + "uv_signage.jpg",
+    spec: { Heads: "3× Epson i3200", Ink: "UV DTF + Gloss Varnish", Width: "600 mm", Speed: "8 m²/hr" }
+  },
 
-  {name:"M Jet",cat:"UV",flagship:true,blurb:"In-house UV flatbed — signage, décor, rigid media.",img:C + "uv_flatbed.jpg",
-   spec:{Type:"UV flatbed",Media:"Rigid · signage · décor",Range:"Entry to high-end UV"}},
-  {name:"DOCAN H1000M UV Flatbed",cat:"UV",blurb:"8×4 format, Ricoh Gen2, 2 heads.",img:C + "uv_signage.jpg"},
-  {name:"DOCAN H1600M",cat:"UV",blurb:"High-speed UV flatbed.",img:C + "uv_flatbed.jpg"},
-  {name:"DOCAN H3000M",cat:"UV",blurb:"Fast-speed large-format UV inkjet.",img:C + "uv_acrylic.jpg"},
-  {name:"6090 UV",cat:"UV",blurb:"Desktop-class UV flatbed.",img:C + "uv_signage.jpg"},
-  {name:"A4 UV Flatbed",cat:"UV",blurb:"Benchtop UV printing.",img:C + "uv_flatbed.jpg"},
-  {name:"3×5 ft UV",cat:"UV",blurb:"Medium-format UV flatbed.",img:C + "uv_acrylic.jpg"},
-  {name:"UV Roll-to-Roll",cat:"UV",blurb:"Roll media UV line.",img:C + "uv_signage.jpg"},
-  {name:"UV DTF",cat:"UV",blurb:"Direct-to-film UV.",img:C + "uv_acrylic.jpg"},
-  {name:"Glass / Door Printer",cat:"UV",blurb:"Almirah, door, glass print capability.",img:C + "uv_flatbed.jpg"},
+  /* ---- Sublimation ---- */
+  {
+    name: "VK-JET 180K-S Sublimation",
+    cat: "Sublimation",
+    flagship: true,
+    blurb: "High-speed industrial dye-sublimation line for sportswear, flags, and home furnishings.",
+    img: C + "sublimation_main.jpg",
+    spec: { Heads: "4× Epson i3200-A1", Ink: "Dye-Sublimation CMYK", Width: "1.9 m", Speed: "180 m²/hr (1-pass)" }
+  },
+  {
+    name: "8-Head i3200 Subli-Master",
+    cat: "Sublimation",
+    blurb: "High-volume 8-head staggered transfer line for 30–45 gsm lightweight transfer paper.",
+    img: C + "sublimation_print.jpg",
+    spec: { Heads: "8× Epson i3200-A1", Ink: "High-yield Sublimation", Width: "1.9 m", Speed: "360 m²/hr" }
+  },
 
-  {name:"VK-JET 180K-S",cat:"Sublimation",flagship:true,blurb:"Sublimation line with flag printing option.",img:C + "sublimation_main.jpg",
-   spec:{Type:"Sublimation printer",Use:"Flags · transfer"}},
-  {name:"8-Head i3200 Sublimation",cat:"Sublimation",blurb:"i3200 print-head sublimation line.",img:C + "sublimation_print.jpg"},
+  /* ---- CNC & Laser ---- */
+  {
+    name: "CNC Router 1325 Heavy Bed",
+    cat: "CNC / Laser",
+    flagship: true,
+    blurb: "Heavy-duty monolithic steel gantry with 9kW air-cooled spindle and 6-zone vacuum platen.",
+    img: C + "cnc_router_hd.jpg",
+    spec: { Spindle: "9.0 kW HSD Air Cooled", Bed: "1300×2500 mm", Drive: "Yaskawa AC Servo", Speed: "25 m/min" }
+  },
+  {
+    name: "Fiber Laser Metal Cutter 3015",
+    cat: "CNC / Laser",
+    blurb: "Raycus 3kW/6kW fiber laser cutting platform for stainless steel, mild steel, and aluminum sheets.",
+    img: C + "laser_metal.jpg",
+    spec: { Power: "Raycus 3000W / 6000W", Bed: "3000×1500 mm", Cutting: "Up to 22mm Carbon Steel" }
+  },
+  {
+    name: "CO2 Laser Cutter 1390",
+    cat: "CNC / Laser",
+    blurb: "High-precision 150W CO2 laser for cast acrylic, wood engravings, leather, and promotional signage.",
+    img: C + "laser_cutting.jpg",
+    spec: { Tube: "150W RECI CO2", Bed: "1300×900 mm", Speed: "Up to 600 mm/s" }
+  },
+  {
+    name: "Automatic Channel Letter Bender",
+    cat: "CNC / Laser",
+    blurb: "CNC computerized bending system for aluminum, stainless steel, and iron 3D channel letters.",
+    img: C + "cnc_router.jpg",
+    spec: { Material: "Aluminum / Stainless Steel", Height: "20–160 mm", Thickness: "0.4–1.2 mm" }
+  },
 
-  {name:"CNC Wood Router 1325 (3 kW)",cat:"CNC / Laser",blurb:"High-speed wood cutting and engraving router.",img:C + "cnc_router.jpg"},
-  {name:"Thermocol CNC Router",cat:"CNC / Laser",blurb:"Thermocol cutting routers.",img:C + "cnc_router.jpg"},
-  {name:"Fiber Laser Cutting",cat:"CNC / Laser",blurb:"Metal cutting fiber laser.",img:C + "laser_metal.jpg"},
-  {name:"Metal & Non-Metal Laser",cat:"CNC / Laser",blurb:"General-purpose laser cutting.",img:C + "laser_cutting.jpg"},
-  {name:"UV Coating Line",cat:"Finishing",blurb:"Coating and finishing line.",img:C + "facility_clean.jpg"},
-  {name:"Inks & Print Heads",cat:"Consumables",blurb:"Solvent/eco CMYK inks · Xaar, Ricoh Gen2 heads · spares.",img:C + "inks_cmyk.jpg"}
+  /* ---- Consumables & Spares ---- */
+  {
+    name: "Certified Industrial Print Heads",
+    cat: "Consumables",
+    blurb: "Genuine factory-tested Kyocera KJ4A/B, Ricoh Gen5/6, Konica Minolta 512i/1024i, and Xaar 1201.",
+    img: C + "print_head.jpg",
+    spec: { Compatibility: "All Major Industrial Brands", Testing: "100% Jetting Verified in Delhi" }
+  },
+  {
+    name: "Original High-Density OEM Inks",
+    cat: "Consumables",
+    blurb: "High-density solvent, eco-solvent, LED UV curable, and reactive dye inks with zero nozzle clogging.",
+    img: C + "inks_cmyk.jpg",
+    spec: { Types: "Solvent / UV / Reactive / Subli", Standard: "ISO 9001 Certified Dispersion" }
+  }
 ];
 
-/* client logos shown on home — their own site's brand crops */
-const CLIENTS=["assets/img/products/1.png","assets/img/products/2.png","assets/img/products/3.png","assets/img/products/4.png","assets/img/products/5.png","assets/img/products/6.png","assets/img/products/7.png","assets/img/products/8.png"];
+const CLIENTS = [
+  "assets/img/products/1.png",
+  "assets/img/products/2.png",
+  "assets/img/products/3.png",
+  "assets/img/products/4.png",
+  "assets/img/products/5.png",
+  "assets/img/products/6.png",
+  "assets/img/products/7.png",
+  "assets/img/products/8.png"
+];

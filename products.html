@@ -485,7 +485,7 @@
 <!-- =========================================================================
      COMPLETE CATALOGUE DIRECTORY (ALL 35 PLATFORMS)
      ========================================================================= -->
-<section class="apple-cat-section">
+<section class="apple-cat-section" id="catalog-section">
   <div class="apple-wrap">
     <div class="apple-catalog-header">
       <p class="apple-kicker">COMPLETE FACTORY INVENTORY</p>
@@ -493,8 +493,30 @@
       <p>Filter through our comprehensive lines of wide-format solvent, digital textile, rigid UV flatbed, sublimation, and CNC laser systems.</p>
     </div>
 
-    <div class="cat-jump" id="cat-jump"></div>
-    <div class="p-groups" id="product-grid"></div>
+    <!-- Apple-style Interactive Search & Filter Controls Toolbar -->
+    <div class="apple-catalog-controls">
+      <div class="apple-controls-top">
+        <div class="apple-search-box">
+          <svg class="apple-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="search" id="catalog-search" placeholder="Search by model, print head (Kyocera, Ricoh...), application..." aria-label="Search machinery catalog">
+        </div>
+        <div class="apple-sort-box">
+          <label for="catalog-sort" class="apple-sort-lbl">Sort by:</label>
+          <select id="catalog-sort" class="apple-sort-select" aria-label="Sort catalog">
+            <option value="featured">Featured / Flagships First</option>
+            <option value="name-asc">Model: A &rarr; Z</option>
+            <option value="cat">Category</option>
+          </select>
+        </div>
+      </div>
+      <!-- Category Filter Pills -->
+      <div class="apple-cat-pills" id="cat-pills"></div>
+      <!-- Live Count Status -->
+      <div class="apple-catalog-status" id="catalog-status" aria-live="polite">Showing all 28 industrial systems</div>
+    </div>
+
+    <!-- Product Grid Container -->
+    <div class="apple-product-grid" id="product-grid"></div>
   </div>
 </section>
 

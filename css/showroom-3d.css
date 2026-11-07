@@ -228,8 +228,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #00ffaa;
-  box-shadow: 0 0 8px #00ffaa;
+  background: #30d158;
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .sr-hud-tools {

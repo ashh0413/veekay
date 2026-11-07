@@ -25,55 +25,167 @@
   var grid = document.getElementById("product-grid");
   var P = typeof PRODUCTS !== "undefined" ? PRODUCTS : null;
   if (grid && P) {
-    /* grouped render: one section per category, flagships pulled to the top */
-    var ORDER = ["Solvent", "Textile", "UV", "Sublimation", "CNC / Laser", "Finishing", "Consumables"];
-    function refOf(p) { return "REF · VKE-" + String(PRODUCTS.indexOf(p) + 1).padStart(3, "0"); }
-    function imgHTML(p) {
-      return p.img ? '<img class="card-img" src="' + p.img + '" alt="' + p.name + '" loading="lazy">' : "";
+    var searchInput = document.getElementById("catalog-search");
+    var sortSelect = document.getElementById("catalog-sort");
+    var statusEl = document.getElementById("catalog-status");
+    var pillsContainer = document.getElementById("cat-pills");
+
+    var activeCat = "all";
+    var activeQuery = "";
+    var activeSort = "featured";
+
+    var CATEGORIES = [
+      { key: "all", label: "All Platforms" },
+      { key: "Solvent", label: "Roll-to-Roll" },
+      { key: "UV", label: "Flatbed UV" },
+      { key: "Textile", label: "Digital Textile" },
+      { key: "Sublimation", label: "Sublimation" },
+      { key: "CNC / Laser", label: "CNC & Laser" },
+      { key: "Consumables", label: "Heads & Inks" }
+    ];
+
+    function refOf(p) {
+      return "REF · VKE-" + String(PRODUCTS.indexOf(p) + 1).padStart(3, "0");
     }
+
+    function renderFilterPills() {
+      if (!pillsContainer) return;
+      pillsContainer.innerHTML = CATEGORIES.map(function (c) {
+        var count = c.key === "all" ? P.length : P.filter(function (x) { return x.cat === c.key; }).length;
+        var activeClass = activeCat === c.key ? " active" : "";
+        return '<button class="apple-cat-filter-btn' + activeClass + '" data-cat="' + c.key + '">' +
+          c.label + ' <span class="badge-count">' + count + '</span></button>';
+      }).join("");
+
+      pillsContainer.querySelectorAll(".apple-cat-filter-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          activeCat = btn.getAttribute("data-cat");
+          pillsContainer.querySelectorAll(".apple-cat-filter-btn").forEach(function (b) {
+            b.classList.toggle("active", b === btn);
+          });
+          renderCatalog();
+        });
+      });
+    }
+
     function cardHTML(p) {
       var m = encodeURIComponent(p.name);
-      var cta = '<p class="go"><a class="arrow-link" href="machine.html?m=' + m + '">View details <span class="arr">&rarr;</span></a></p>';
-      var pills = '<div class="card-pills"><span class="pill">' + (p.cat === "Consumables" ? "Original Stock" : "Industrial Grade") + '</span><span class="pill">Verified Specs</span></div>';
-      if (p.flagship) {
-        var specs = Object.keys(p.spec || {}).map(function (k) {
-          return '<div><span>' + k + '</span>' + p.spec[k] + "</div>";
-        }).join("");
-        return '<article class="card flagship"><div class="inner"><div>' +
-          '<div class="rowline"><span class="cat">Flagship · ' + p.cat + '</span><span class="ref">' + refOf(p) + "</span></div>" +
-          "<h3>" + p.name + "</h3><p>" + p.blurb +
-          '</p>' + pills + '<p class="go"><a class="arrow-link" href="machine.html?m=' + m + '">Full spec sheet &amp; enquire <span class="arr">&rarr;</span></a></p>' +
-          "</div><div class='flag-right'>" + imgHTML(p) + '<div class="flag-specs">' + specs + "</div></div></div></article>";
-      }
-      return '<article class="card"><div class="rowline"><span class="ref">' + refOf(p) + '</span><span class="cat">' + p.cat + "</span></div>" + imgHTML(p) +
-        "<h3>" + p.name + "</h3><p>" + p.blurb + pills + cta + "</article>";
-    }
-    function group(cat) {
-      var items = P.filter(function (p) { return p.cat === cat; });
-      if (!items.length) return "";
-      var byId = { Solvent: "solvent", Textile: "textile", UV: "uv", Sublimation: "sublimation", "CNC / Laser": "cnc", Finishing: "finishing", Consumables: "consumables" };
-      var flags = items.filter(function (p) { return p.flagship; });
-      var rest = items.filter(function (p) { return !p.flagship; });
-      return '<section class="p-group" id="cat-' + byId[cat] + '" data-c="' + byId[cat] + '">' +
-        '<div class="p-group-head"><div class="rowline"><span class="cat" style="color:var(--ink)">' + cat + "</span>" +
-        '<span class="cnt">' + items.length + " model" + (items.length > 1 ? "s" : "") + "</span></div></div>" +
-        '<div class="grid">' + flags.map(cardHTML).join("") + rest.map(cardHTML).join("") + "</div></section>";
-    }
-    var order = ORDER.filter(function (c) { return P.some(function (p) { return p.cat === c; }); });
-    grid.innerHTML = order.map(group).join("");
+      var img = p.img
+        ? '<div class="apple-product-img-wrap"><img src="' + p.img + '" alt="' + p.name + '" loading="lazy" class="apple-product-img"></div>'
+        : '<div class="apple-product-img-wrap placeholder"><span>IMAGE PENDING</span></div>';
 
-    /* jump-to-category bar (from home tiles / footer / hash) */
-    var bar = document.getElementById("cat-jump");
-    if (bar) {
-      bar.innerHTML = '<span class="jump-label">Jump to</span>' + order.map(function (c) {
-        var ids = { Solvent: "solvent", Textile: "textile", UV: "uv", Sublimation: "sublimation", "CNC / Laser": "cnc", Finishing: "finishing", Consumables: "consumables" };
-        return '<a class="jump" data-jc="' + ids[c] + '" href="#cat-' + ids[c] + '">' + c + "</a>";
-      }).join("");
+      var flagshipPill = p.flagship ? '<span class="apple-card-flagship-pill">Flagship Model</span>' : '';
+      var specBadges = '';
+      if (p.spec) {
+        var specKeys = Object.keys(p.spec).slice(0, 3);
+        specBadges = '<div class="apple-product-specs-chips">' +
+          specKeys.map(function (k) {
+            return '<div class="spec-chip"><strong>' + k + ':</strong> ' + p.spec[k] + '</div>';
+          }).join("") + '</div>';
+      }
+
+      return '<article class="apple-product-card' + (p.flagship ? ' is-flagship' : '') + '">' +
+        img +
+        '<div class="apple-product-body">' +
+          '<div class="apple-product-meta-row">' +
+            '<span class="apple-product-cat-tag">' + p.cat + '</span>' +
+            '<span class="apple-product-ref-tag">' + refOf(p) + '</span>' +
+            flagshipPill +
+          '</div>' +
+          '<h3 class="apple-product-title">' + p.name + '</h3>' +
+          '<p class="apple-product-blurb">' + p.blurb + '</p>' +
+          specBadges +
+          '<div class="apple-product-actions">' +
+            '<a href="machine.html?m=' + m + '" class="apple-btn-pill-secondary apple-product-specs-btn">View Specifications &rarr;</a>' +
+            '<a href="enquiry.html?machine=' + m + '" class="apple-btn-pill-primary apple-product-quote-btn">Get Factory Quote</a>' +
+          '</div>' +
+        '</div>' +
+      '</article>';
     }
-    /* deep link: products.html#uv -> scroll to that group */
-    if (location.hash && location.hash.length > 1) {
-      var el = document.querySelector(location.hash) || document.querySelector("#cat-" + location.hash.slice(1));
-      if (el) setTimeout(function () { el.scrollIntoView(); }, 60);
+
+    function renderCatalog() {
+      var q = activeQuery.toLowerCase().trim();
+      var filtered = P.filter(function (p) {
+        var matchCat = (activeCat === "all" || p.cat === activeCat);
+        var matchQuery = !q ||
+          p.name.toLowerCase().indexOf(q) >= 0 ||
+          p.cat.toLowerCase().indexOf(q) >= 0 ||
+          (p.blurb && p.blurb.toLowerCase().indexOf(q) >= 0) ||
+          (p.spec && JSON.stringify(p.spec).toLowerCase().indexOf(q) >= 0);
+        return matchCat && matchQuery;
+      });
+
+      if (activeSort === "featured") {
+        filtered.sort(function (a, b) {
+          if (a.flagship && !b.flagship) return -1;
+          if (!a.flagship && b.flagship) return 1;
+          return 0;
+        });
+      } else if (activeSort === "name-asc") {
+        filtered.sort(function (a, b) { return a.name.localeCompare(b.name); });
+      } else if (activeSort === "cat") {
+        filtered.sort(function (a, b) { return a.cat.localeCompare(b.cat); });
+      }
+
+      if (statusEl) {
+        statusEl.textContent = 'Showing ' + filtered.length + ' of ' + P.length + ' industrial platforms';
+      }
+
+      if (!filtered.length) {
+        grid.innerHTML = '<div class="apple-catalog-empty">' +
+          '<h3>No matching industrial platforms found</h3>' +
+          '<p>Try adjusting your search terms or clearing the category filter.</p>' +
+          '<button class="apple-btn-pill-secondary" id="reset-catalog-btn">Clear All Filters</button>' +
+        '</div>';
+        var resetBtn = document.getElementById("reset-catalog-btn");
+        if (resetBtn) {
+          resetBtn.addEventListener("click", function () {
+            activeCat = "all";
+            activeQuery = "";
+            if (searchInput) searchInput.value = "";
+            renderFilterPills();
+            renderCatalog();
+          });
+        }
+        return;
+      }
+
+      grid.innerHTML = filtered.map(cardHTML).join("");
+    }
+
+    renderFilterPills();
+    renderCatalog();
+
+    if (searchInput) {
+      searchInput.addEventListener("input", function () {
+        activeQuery = searchInput.value;
+        renderCatalog();
+      });
+    }
+
+    if (sortSelect) {
+      sortSelect.addEventListener("change", function () {
+        activeSort = sortSelect.value;
+        renderCatalog();
+      });
+    }
+
+    /* deep link mapping: products.html#uv -> activate UV filter pill */
+    var hash = location.hash.replace("#", "").toLowerCase();
+    if (hash) {
+      var map = {
+        "uv": "UV",
+        "solvent": "Solvent",
+        "textile": "Textile",
+        "sublimation": "Sublimation",
+        "cnc": "CNC / Laser",
+        "consumables": "Consumables"
+      };
+      if (map[hash]) {
+        activeCat = map[hash];
+        renderFilterPills();
+        renderCatalog();
+      }
     }
   }
 
