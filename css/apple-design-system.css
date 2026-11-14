@@ -986,12 +986,21 @@ body.apple-theme {
   }
 }
 
+@media (max-width: 960px) {
+  .apple-nav-links {
+    display: none !important;
+  }
+  .apple-mobile-burger {
+    display: flex !important;
+  }
+}
+
 @media (max-width: 768px) {
   .apple-nav-links {
     display: none;
   }
   .apple-mobile-burger {
-    display: block;
+    display: flex;
   }
   .apple-app-cards-grid {
     grid-template-columns: 1fr;
