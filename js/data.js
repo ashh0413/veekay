@@ -1,8 +1,8 @@
 /* VEE KAY product data — names + specs from veekayent.com / veekaydigital.in.
    Mapped with authentic original product photography across all platforms. */
 const O = "assets/img/original/";
-const P = "assets/img/products-items/";
-const PR = "assets/img/products/";
+const P = "assets/img/products/";
+const PI = "assets/img/products-items/";
 const C = "assets/img/curated/";
 
 const PRODUCTS = [
@@ -20,28 +20,28 @@ const PRODUCTS = [
     cat: "Solvent",
     flagship: true,
     blurb: "Workhorse industrial wide-format solvent line. High-speed flex, vinyl, and mesh.",
-    img: P + "VK-JET-3500.png",
+    img: PI + "VK-JET-3500.png",
     spec: { Heads: "Konica 512i / 1024i", Ink: "Solvent CMYK", Width: "3.2 m", Resolution: "180–720 dpi", Speed: "1,300 sq ft/hr (8-head)" }
   },
   {
     name: "Q Jet Plus 1024",
     cat: "Solvent",
     blurb: "Heavy-duty steel bed solvent inkjet for high-volume outdoor flex and banner production.",
-    img: P + "Q-Jet-Plus-1024.png",
+    img: PI + "Q-Jet-Plus-1024.png",
     spec: { Heads: "Konica 1024i (13pL)", Ink: "High-density Solvent", Width: "3.2 m", Speed: "950 sq ft/hr" }
   },
   {
     name: "E Jet V0",
     cat: "Solvent",
     blurb: "Compact footprint roll-to-roll solvent series for sign shops, vehicle wraps, and vinyl.",
-    img: P + "E-Jet-V0.png",
+    img: PI + "E-Jet-V0.png",
     spec: { Heads: "Epson i3200-E1", Ink: "Eco-Solvent", Width: "1.8 m", Speed: "450 sq ft/hr" }
   },
   {
     name: "FLEX Industrial 3200",
     cat: "Solvent",
     blurb: "Continuous outdoor flex and billboard line with dual infrared drying tunnels.",
-    img: PR + "1.png",
+    img: C + "solvent_machine_roll.jpg",
     spec: { Heads: "Konica 512i (30pL)", Ink: "Solvent CMYK", Width: "3.2 m", Speed: "1,100 sq ft/hr" }
   },
   {
@@ -107,7 +107,7 @@ const PRODUCTS = [
     name: "E Press Machine",
     cat: "Textile",
     blurb: "Industrial rotary heat transfer calendar press for roll-to-roll sublimation finishing.",
-    img: P + "E-Press-machine.png",
+    img: PI + "E-Press-machine.png",
     spec: { Type: "Rotary Heat Press", Drum: "420 mm Oil Heated", Width: "1.8 m", Speed: "2.5 m/min" }
   },
   {
@@ -152,14 +152,14 @@ const PRODUCTS = [
     name: "6090 UV Desktop Flatbed",
     cat: "UV",
     blurb: "Precision desktop UV flatbed for personalized phone cases, acrylic trophies, and leather items.",
-    img: O + "mimaki-ujf-6042mkii-e.png",
+    img: P + "uv-small.jpg",
     spec: { Heads: "3× Epson i3200-U1", Ink: "LED UV (CMYK+W+V)", Bed: "600×900 mm", Height: "Up to 150 mm" }
   },
   {
     name: "UV DTF Transfer System",
     cat: "UV",
     blurb: "Direct-to-film crystal sticker system with automatic inline lamination for irregular curved surfaces.",
-    img: O + "mimaki-ujv300dtf-75.png",
+    img: C + "uv_signage.jpg",
     spec: { Heads: "3× Epson i3200", Ink: "UV DTF + Gloss Varnish", Width: "600 mm", Speed: "8 m²/hr" }
   },
 
@@ -169,14 +169,14 @@ const PRODUCTS = [
     cat: "Sublimation",
     flagship: true,
     blurb: "High-speed industrial dye-sublimation line for sportswear, flags, and home furnishings.",
-    img: O + "mimaki-ts330-1600.png",
+    img: O + "mimaki-ts100-160.png",
     spec: { Heads: "4× Epson i3200-A1", Ink: "Dye-Sublimation CMYK", Width: "1.9 m", Speed: "180 m²/hr (1-pass)" }
   },
   {
     name: "8-Head i3200 Subli-Master",
     cat: "Sublimation",
     blurb: "High-volume 8-head staggered transfer line for 30–45 gsm lightweight transfer paper.",
-    img: O + "mimaki-tiger600-1800ts.png",
+    img: O + "V1808E.png",
     spec: { Heads: "8× Epson i3200-A1", Ink: "High-yield Sublimation", Width: "1.9 m", Speed: "360 m²/hr" }
   },
 
@@ -186,14 +186,14 @@ const PRODUCTS = [
     cat: "CNC / Laser",
     flagship: true,
     blurb: "Heavy-duty monolithic steel gantry with 9kW air-cooled spindle and 6-zone vacuum platen.",
-    img: PR + "7.png",
+    img: C + "cnc_router_hd.jpg",
     spec: { Spindle: "9.0 kW HSD Air Cooled", Bed: "1300×2500 mm", Drive: "Yaskawa AC Servo", Speed: "25 m/min" }
   },
   {
     name: "Fiber Laser Metal Cutter 3015",
     cat: "CNC / Laser",
     blurb: "Raycus 3kW/6kW fiber laser cutting platform for stainless steel, mild steel, and aluminum sheets.",
-    img: PR + "8.png",
+    img: C + "laser_metal.jpg",
     spec: { Power: "Raycus 3000W / 6000W", Bed: "3000×1500 mm", Cutting: "Up to 22mm Carbon Steel" }
   },
   {
@@ -207,7 +207,7 @@ const PRODUCTS = [
     name: "Automatic Channel Letter Bender",
     cat: "CNC / Laser",
     blurb: "CNC computerized bending system for aluminum, stainless steel, and iron 3D channel letters.",
-    img: PR + "7.png",
+    img: C + "cnc_router.jpg",
     spec: { Material: "Aluminum / Stainless Steel", Height: "20–160 mm", Thickness: "0.4–1.2 mm" }
   },
 
